@@ -320,7 +320,7 @@ export default function HomePage() {
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur">
           <div className="relative h-[360px] overflow-hidden rounded-[1.6rem] bg-[#5b3b27] sm:h-[460px] lg:h-[540px]">
             <Image
-              src="/images/judith-hero.jpg"
+              src="/images/judith-hero.png"
               alt="Hon. Dr. Judith Mayen Ogbara portrait"
               fill
               priority
