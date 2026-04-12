@@ -453,17 +453,16 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute bottom-3 right-3 max-w-[170px] rounded-2xl border border-[#ead7bb] bg-white/94 p-3 shadow-[0_12px_40px_rgba(43,28,20,0.08)] backdrop-blur sm:bottom-4 sm:right-4 sm:max-w-[210px] sm:p-4 lg:bottom-6 lg:right-6 lg:max-w-[240px] lg:p-5">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#9a7449] sm:text-[11px] sm:tracking-[0.28em]">
-            Profile Snapshot
-          </p>
-          <p className="mt-2 text-[13px] leading-6 text-[#6d5746] sm:text-sm sm:leading-7">
-            A public servant and advocate whose work reflects service,
-            leadership, and measurable community impact.
-          </p>
-        </div>
-      </div>
-
+       <div className="hidden sm:block absolute bottom-3 right-3 max-w-[170px] rounded-2xl border border-[#ead7bb] bg-white/94 p-3 shadow-[0_12px_40px_rgba(43,28,20,0.08)] backdrop-blur sm:bottom-4 sm:right-4 sm:max-w-[210px] sm:p-4 lg:bottom-6 lg:right-6 lg:max-w-[240px] lg:p-5">
+  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#9a7449] sm:text-[11px] sm:tracking-[0.28em]">
+    Profile Snapshot
+  </p>
+  <p className="mt-2 text-[13px] leading-6 text-[#6d5746] sm:text-sm sm:leading-7">
+    A public servant and advocate whose work reflects service,
+    leadership, and measurable community impact.
+  </p>
+</div>
+</div>
       <div className="order-1 lg:order-2">
         <p className="text-sm font-bold uppercase tracking-[0.26em] text-[#9a7449] sm:tracking-[0.3em]">
           About Judith
@@ -883,7 +882,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="rounded-2xl bg-[#faf5ee] p-4 text-center sm:col-span-2 xl:col-span-1 sm:p-5">
+        <div className="hidden sm:block rounded-2xl bg-[#faf5ee] p-4 text-center sm:col-span-2 xl:col-span-1 sm:p-5">
           <p className="text-base font-semibold text-[#8a653f]">Innovation</p>
           <p className="mt-2 text-sm leading-7 text-[#6d5746]">
             Embracing new ideas that drive real and sustainable progress.
