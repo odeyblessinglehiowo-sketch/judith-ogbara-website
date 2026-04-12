@@ -321,7 +321,7 @@ export default function HomePage() {
         <div className="absolute -inset-2 rounded-[2.1rem] border border-[#e8c998]/15 sm:-inset-3 sm:rounded-[2.3rem]" />
 
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur">
-          <div className="relative h-[320px] overflow-hidden rounded-[1.6rem] bg-[#5b3b27] sm:h-[420px] lg:h-[540px]">
+          <div className="relative h-[320px] overflow-hidden rounded-[1.6rem] bg-[#5b3b27] sm:h-[450px] lg:h-[540px]">
             <Image
               src="/images/judith-hero.png"
               alt="Hon. Dr. Judith Mayen Ogbara portrait"
@@ -443,7 +443,7 @@ export default function HomePage() {
         <div className="absolute -left-3 -top-3 h-full w-full rounded-[2rem] border border-[#dcc3a0]/40 sm:-left-4 sm:-top-4" />
 
         <div className="relative overflow-hidden rounded-[2rem] bg-[#f4eadf] p-3 shadow-[0_20px_60px_rgba(43,28,20,0.08)]">
-          <div className="relative h-[300px] overflow-hidden rounded-[1.5rem] bg-[#e8d8c5] sm:h-[380px] lg:h-[520px]">
+          <div className="relative h-[300px] overflow-hidden rounded-[1.5rem] bg-[#e8d8c5] sm:h-[410px] lg:h-[520px]">
             <Image
               src="/images/4.jpeg"
               alt="Hon. Dr. Judith Mayen Ogbara"
