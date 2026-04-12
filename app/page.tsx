@@ -246,75 +246,73 @@ export default function HomePage() {
           />
         ))}
 
-       
-
-<div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl items-center px-5 pb-8 pt-6 sm:px-6 md:pb-16 md:pt-10 lg:px-10">
-  <div className="grid w-full items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+<div className="relative z-10 mx-auto flex min-h-[auto] max-w-7xl items-center px-5 pb-8 pt-8 sm:px-6 md:pb-16 md:pt-10 lg:min-h-[calc(100vh-96px)] lg:px-10">
+  <div className="grid w-full items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
     <div className="max-w-3xl">
       <div className="mb-4 inline-flex items-center rounded-full border border-[#d4af78]/30 bg-white/5 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] backdrop-blur sm:text-[11px] sm:tracking-[0.35em]">
         Public Servant • Philanthropist • Governance Advocate
       </div>
 
-      <h1 className="max-w-3xl text-[2.8rem] font-bold leading-[0.95] text-white sm:text-6xl lg:text-7xl">
+      <h1 className="max-w-3xl text-[2.8rem] font-bold leading-[0.96] text-white sm:text-6xl lg:text-7xl">
         Hon. Dr. Judith
         <span className="block text-[#f0d1a0]">Mayen Ogbara</span>
       </h1>
 
-      <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-[#efe3d4]/85 sm:mt-7 sm:text-lg md:text-xl">
-        A distinguished leader committed to empowering communities,
-        advancing education, and promoting inclusive governance through
-        service, integrity, and lasting impact.
+      <p className="mt-4 max-w-2xl text-[1rem] leading-8 text-[#efe3d4]/85 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
+        A distinguished leader committed to empowering communities, advancing
+        education, and promoting inclusive governance through service, integrity,
+        and lasting impact.
       </p>
 
       <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:flex sm:flex-wrap sm:gap-4">
         <a
           href="#about"
-          className="inline-flex items-center justify-center rounded-full bg-[#d4af78] px-4 py-3 text-sm font-semibold text-[#2a1a12] shadow-[0_0_25px_rgba(212,175,120,0.25)] transition hover:scale-[1.02] hover:bg-[#e0bd89] sm:px-7"
+          className="inline-flex items-center justify-center rounded-full bg-[#d4af78] px-4 py-3 text-sm font-semibold text-[#2a1a12] shadow-[0_0_25px_rgba(212,175,120,0.25)] transition hover:scale-[1.02] hover:bg-[#e0bd89] sm:w-auto sm:px-7"
         >
           About Her
         </a>
 
         <a
           href="#impact"
-          className="inline-flex items-center justify-center rounded-full border border-[#e5c798]/45 bg-white/5 px-4 py-3 text-sm font-semibold text-[#f6ead9] backdrop-blur transition hover:bg-white/10 sm:px-7"
+          className="inline-flex items-center justify-center rounded-full border border-[#e5c798]/45 bg-white/5 px-4 py-3 text-sm font-semibold text-[#f6ead9] backdrop-blur transition hover:bg-white/10 sm:w-auto sm:px-7"
         >
           View Impact
         </a>
       </div>
 
-      <div className="mt-6 grid grid-cols-3 gap-3 sm:mt-10 xl:grid-cols-3">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
-          <p className="text-[1.9rem] font-bold leading-none text-[#f1d3a6]">500+</p>
-          <p className="mt-2 text-[13px] leading-5 text-[#f5ebdf]/75">
+      <div className="mt-6 grid grid-cols-3 gap-3 sm:mt-10 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur sm:p-4">
+          <p className="text-xl font-bold text-[#f1d3a6] sm:text-2xl">500+</p>
+          <p className="mt-1 text-xs leading-5 text-[#f5ebdf]/75 sm:text-sm sm:leading-6">
             Female students supported
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
-          <p className="text-[1.9rem] font-bold leading-none text-[#f1d3a6]">5,000+</p>
-          <p className="mt-2 text-[13px] leading-5 text-[#f5ebdf]/75">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur sm:p-4">
+          <p className="text-xl font-bold text-[#f1d3a6] sm:text-2xl">5,000+</p>
+          <p className="mt-1 text-xs leading-5 text-[#f5ebdf]/75 sm:text-sm sm:leading-6">
             Girls empowered through outreach
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
-          <p className="text-[1.9rem] font-bold leading-none text-[#f1d3a6]">50</p>
-          <p className="mt-2 text-[13px] leading-5 text-[#f5ebdf]/75">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur sm:col-span-2 xl:col-span-1 sm:p-4">
+          <p className="text-xl font-bold text-[#f1d3a6] sm:text-2xl">50</p>
+          <p className="mt-1 text-xs leading-5 text-[#f5ebdf]/75 sm:text-sm sm:leading-6">
             Women supported with SME grants
           </p>
         </div>
       </div>
     </div>
 
-    <div className="relative flex justify-center lg:justify-end">
-      <div className="hero-card relative w-full max-w-[420px] sm:max-w-[480px]">
+    <div className="relative hidden justify-center lg:flex lg:justify-end">
+      <div className="hero-card relative w-full max-w-[480px]">
         <div className="absolute inset-0 rounded-[2rem] bg-[#d4af78]/10 blur-2xl" />
-        <div className="absolute -inset-2 rounded-[2.1rem] border border-[#e8c998]/15 sm:-inset-3 sm:rounded-[2.3rem]" />
+        <div className="absolute -inset-3 rounded-[2.3rem] border border-[#e8c998]/15" />
 
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur">
-          <div className="relative h-[360px] overflow-hidden rounded-[1.6rem] bg-[#5b3b27] sm:h-[460px] lg:h-[540px]">
+          <div className="relative h-[540px] overflow-hidden rounded-[1.6rem] bg-[#5b3b27]">
             <Image
-              src="/images/judith-hero.png"
+              src="/images/judith-hero.jpg"
               alt="Hon. Dr. Judith Mayen Ogbara portrait"
               fill
               priority
@@ -323,14 +321,13 @@ export default function HomePage() {
 
             <div className="hero-shine absolute inset-y-0 left-[-30%] w-[35%] rotate-12 bg-white/10 blur-2xl" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.10),transparent_28%),linear-gradient(to_bottom,rgba(20,11,8,0.06),rgba(20,11,8,0.3))]" />
-
-            <div className="absolute right-4 top-4 h-12 w-12 rounded-full border border-white/20 sm:right-5 sm:top-5 sm:h-14 sm:w-14" />
-            <div className="absolute bottom-5 left-5 h-16 w-16 rounded-full border border-[#f2d6ae]/20 sm:bottom-6 sm:left-6 sm:h-20 sm:w-20" />
+            <div className="absolute right-5 top-5 h-14 w-14 rounded-full border border-white/20" />
+            <div className="absolute bottom-6 left-6 h-20 w-20 rounded-full border border-[#f2d6ae]/20" />
           </div>
         </div>
 
-        <div className="absolute -bottom-4 left-1/2 w-[92%] -translate-x-1/2 rounded-2xl border border-white/10 bg-[#2a1b14]/78 px-4 py-3 backdrop-blur sm:-bottom-5 sm:w-[88%]">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#d9bb8d] sm:text-[11px] sm:tracking-[0.3em]">
+        <div className="absolute -bottom-5 left-1/2 w-[88%] -translate-x-1/2 rounded-2xl border border-white/10 bg-[#2a1b14]/70 px-5 py-4 backdrop-blur">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#d9bb8d]">
             Before the crowd, there was the work
           </p>
         </div>
@@ -421,7 +418,7 @@ export default function HomePage() {
 
     <section
   id="about"
-  className="relative overflow-hidden bg-[#fcfaf7] px-5 py-16 text-[#2b1c14] sm:px-6 lg:px-10 lg:py-24"
+  className="relative overflow-hidden bg-[#fcfaf7] px-5 py-14 text-[#2b1c14] sm:px-6 lg:px-10 lg:py-24"
 >
   <div className="absolute inset-0 opacity-40">
     <div className="absolute left-[-80px] top-10 h-56 w-56 rounded-full bg-[#ead7bb] blur-3xl" />
@@ -433,34 +430,30 @@ export default function HomePage() {
       <div className="relative order-2 lg:order-1">
         <div className="absolute -left-3 -top-3 h-full w-full rounded-[2rem] border border-[#dcc3a0]/40 sm:-left-4 sm:-top-4" />
 
-        <div className="relative order-2 lg:order-1">
-  <div className="absolute -left-3 -top-3 h-full w-full rounded-[2rem] border border-[#dcc3a0]/40 sm:-left-4 sm:-top-4" />
+        <div className="relative overflow-hidden rounded-[2rem] bg-[#f4eadf] p-3 shadow-[0_20px_60px_rgba(43,28,20,0.08)]">
+          <div className="relative h-[300px] overflow-hidden rounded-[1.5rem] bg-[#e8d8c5] sm:h-[420px] lg:h-[520px]">
+            <Image
+              src="/images/4.jpeg"
+              alt="Hon. Dr. Judith Mayen Ogbara"
+              fill
+              className="object-cover object-top"
+            />
+          </div>
+        </div>
 
-  <div className="relative overflow-hidden rounded-[2rem] bg-[#f4eadf] p-3 shadow-[0_20px_60px_rgba(43,28,20,0.08)]">
-    <div className="relative h-[330px] overflow-hidden rounded-[1.5rem] bg-[#e8d8c5] sm:h-[420px] lg:h-[520px]">
-      <Image
-        src="/images/4.jpeg"
-        alt="Hon. Dr. Judith Mayen Ogbara"
-        fill
-        className="object-cover object-top"
-      />
-    </div>
-  </div>
-
-  <div className="absolute bottom-4 right-4 max-w-[185px] rounded-2xl border border-[#ead7bb] bg-white/94 p-4 shadow-[0_12px_40px_rgba(43,28,20,0.08)] backdrop-blur sm:-bottom-5 sm:right-6 sm:max-w-[240px] sm:p-5">
-    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9a7449] sm:tracking-[0.28em]">
-      Profile Snapshot
-    </p>
-    <p className="mt-3 text-sm leading-7 text-[#6d5746]">
-      A public servant and advocate whose work reflects service,
-      leadership, and measurable community impact.
-    </p>
-  </div>
-</div>
-</div>
+        <div className="absolute bottom-4 right-4 max-w-[180px] rounded-2xl border border-[#ead7bb] bg-white/92 p-3 shadow-[0_12px_40px_rgba(43,28,20,0.08)] backdrop-blur sm:-bottom-5 sm:right-6 sm:max-w-[220px] sm:p-4">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#9a7449] sm:text-[11px] sm:tracking-[0.26em]">
+            Profile Snapshot
+          </p>
+          <p className="mt-2 text-sm leading-7 text-[#6d5746]">
+            A public servant and advocate whose work reflects service,
+            leadership, and measurable community impact.
+          </p>
+        </div>
+      </div>
 
       <div className="order-1 lg:order-2">
-        <p className="text-sm font-bold uppercase tracking-[0.26em] text-[#9a7449] sm:tracking-[0.3em]">
+        <p className="text-sm font-bold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
           About Judith
         </p>
 
@@ -473,67 +466,57 @@ export default function HomePage() {
         <div className="mt-5 space-y-4">
           <p className="max-w-3xl text-[15px] leading-8 text-[#6d5746] sm:text-lg">
             Hon. Dr. Judith Mayen Ogbara is a distinguished public servant,
-            philanthropist, and advocate for transformative leadership. Her work is
-            rooted in integrity, compassion, and a clear commitment to improving
-            lives through education, empowerment, and inclusive governance.
+            philanthropist, and advocate for transformative leadership.
           </p>
 
           <p className="max-w-3xl text-[15px] leading-8 text-[#6d5746] sm:text-lg">
-            Over the years, she has built a strong record of impact through
-            scholarship support, youth and women-focused initiatives, governance
-            advocacy, and community-based interventions that create meaningful and
-            lasting change.
-          </p>
-
-          <p className="hidden max-w-3xl text-[15px] leading-8 text-[#6d5746] sm:block sm:text-lg">
-            Her public engagement continues to reflect a deep sense of duty to the
-            people, especially through efforts that strengthen opportunity,
-            accountability, and sustainable development across communities.
+            Her work reflects a clear commitment to education, empowerment,
+            governance advocacy, and meaningful community impact.
           </p>
         </div>
 
-       <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4">
-  <a
-    href="#vision"
-    className="inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#2f1d14] sm:px-6"
-  >
-    Explore Mandate & Vision
-  </a>
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4">
+          <a
+            href="#vision"
+            className="inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#2f1d14] sm:w-auto sm:px-6"
+          >
+            Mandate & Vision
+          </a>
 
-  <a
-    href="#impact"
-    className="inline-flex items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3] sm:px-6"
-  >
-    View Impact
-  </a>
-</div>
+          <a
+            href="#impact"
+            className="inline-flex items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3] sm:w-auto sm:px-6"
+          >
+            View Impact
+          </a>
+        </div>
 
         <div className="mt-8 grid grid-cols-2 gap-4 xl:grid-cols-4">
-          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm sm:p-5">
+          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm">
             <p className="text-sm font-semibold text-[#8a653f]">Public Service</p>
             <p className="mt-2 text-sm leading-7 text-[#6d5746]">
               Years of visible engagement in governance, empowerment, and advocacy.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm sm:p-5">
+          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm">
             <p className="text-sm font-semibold text-[#8a653f]">Education Impact</p>
             <p className="mt-2 text-sm leading-7 text-[#6d5746]">
               Scholarship support, learning access, and youth-focused development.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm sm:p-5">
+          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm">
             <p className="text-sm font-semibold text-[#8a653f]">Women Empowerment</p>
             <p className="mt-2 text-sm leading-7 text-[#6d5746]">
-              Initiatives that uplift women through grants, mentorship, and opportunity.
+              Initiatives that uplift women through grants and mentorship.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm sm:p-5">
+          <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm">
             <p className="text-sm font-semibold text-[#8a653f]">Community Reach</p>
             <p className="mt-2 text-sm leading-7 text-[#6d5746]">
-              Consistent work focused on people-centered and measurable impact.
+              Consistent work focused on measurable impact.
             </p>
           </div>
         </div>
