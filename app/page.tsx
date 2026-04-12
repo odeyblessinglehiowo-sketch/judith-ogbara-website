@@ -161,64 +161,58 @@ export default function HomePage() {
 
   {/* Mobile side drawer */}
  <div
-  className={`fixed inset-0 z-[110] md:hidden ${
-    mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
-  }`}
->
-  <div
-    onClick={() => setMobileMenuOpen(false)}
-    className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${
-      mobileMenuOpen ? "opacity-100" : "opacity-0"
-    }`}
-  />
-
-  <aside
-    className={`absolute right-0 top-0 h-full w-[84%] max-w-[360px] bg-[#fcfaf7] shadow-[-10px_0_40px_rgba(0,0,0,0.18)] transition-transform duration-300 ${
-      mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-    }`}
-  >
-    <div className="flex items-center justify-between border-b border-[#eadac4] px-6 py-5">
-      <div>
-        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#9a7449]">
-          Menu
-        </p>
-        <p className="mt-2 text-2xl font-bold text-[#2b1c14]">
-          Judith Ogbara
-        </p>
+      className={`fixed inset-y-0 right-0 z-50 w-[82%] max-w-[340px] bg-[#fbf8f3] text-[#24160f] shadow-[0_20px_60px_rgba(0,0,0,0.28)] transition-transform duration-300 md:hidden ${
+        mobileMenuOpen ? "translate-x-0" : "translate-x-full"
+      }`}
+    >
+      <div className="flex items-center justify-between border-b border-[#eadac4] px-5 py-5">
+        <p className="text-lg font-bold text-[#2b1c14]">Menu</p>
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(false)}
+          className="text-3xl leading-none text-[#2b1c14]"
+          aria-label="Close menu"
+        >
+          ×
+        </button>
       </div>
 
-      <button
-        type="button"
-        onClick={() => setMobileMenuOpen(false)}
-        className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#dcc3a0] text-[#2b1c14]"
-        aria-label="Close navigation menu"
-      >
-        <span className="text-3xl leading-none">×</span>
-      </button>
+      <nav className="flex flex-col px-5 py-4">
+        {navItems.map((item) => {
+          const isActive = activeSection === item.href;
+
+          return (
+            <a
+              key={item.href}
+              href={item.href}
+              onClick={() => setMobileMenuOpen(false)}
+              className={`border-b border-[#eee3d4] py-5 text-[1.15rem] font-semibold transition ${
+                isActive ? "text-[#8a653f]" : "text-[#1f1f1f]"
+              }`}
+            >
+              {item.label}
+            </a>
+          );
+        })}
+
+        <a
+          href="#contact"
+          onClick={() => setMobileMenuOpen(false)}
+          className="mt-5 inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-5 py-3 text-sm font-semibold text-white"
+        >
+          Get in Touch
+        </a>
+      </nav>
     </div>
 
-    <nav className="px-6 py-3">
-      {navItems.map((item) => (
-        <a
-          key={item.href}
-          href={item.href}
-          onClick={() => setMobileMenuOpen(false)}
-          className="block border-b border-[#eadac4] py-5 text-[1.2rem] font-semibold text-[#1f2435] transition hover:text-[#9a7449]"
-        >
-          {item.label}
-        </a>
-      ))}
-
-      <a
-        href="#contact"
+    {mobileMenuOpen && (
+      <button
+        type="button"
+        aria-label="Close mobile menu overlay"
+        className="fixed inset-0 z-40 bg-black/35 md:hidden"
         onClick={() => setMobileMenuOpen(false)}
-        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#4a2f21] px-5 py-3.5 text-sm font-semibold text-white"
-      >
-        Get in Touch
-      </a>
-    </nav>
-  </aside>
-</div>
+      />
+    )}
 </header>
       <section id="home" className="relative min-h-screen overflow-hidden bg-[#21150f]">
         <div
