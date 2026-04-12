@@ -79,40 +79,9 @@ export default function HomePage() {
   );
 
   return (
-    <main className="bg-white text-white">
-      <section id="home" className="relative min-h-screen overflow-hidden bg-[#21150f]">
-        <div
-          className="pointer-events-none absolute inset-0 opacity-70 transition-all duration-300"
-          style={{
-            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(212,175,120,0.22), transparent 24%)`,
-          }}
-        />
 
-        <div className="absolute inset-0 bg-[linear-gradient(135deg,#1f140f_0%,#2c1b13_35%,#3b2418_65%,#1b120d_100%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,221,170,0.14),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(176,129,73,0.22),transparent_28%)]" />
-        <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:60px_60px]" />
-
-        <div className="hero-blob absolute left-[-120px] top-[-80px] h-[320px] w-[320px] rounded-full bg-[#c89857]/20 blur-3xl" />
-        <div className="hero-blob-delay absolute bottom-[-120px] right-[-80px] h-[300px] w-[300px] rounded-full bg-[#f1d3a6]/10 blur-3xl" />
-        <div className="hero-blob-slow absolute left-[45%] top-[12%] h-[220px] w-[220px] rounded-full bg-[#9e6f42]/15 blur-3xl" />
-
-        {sparkles.map((sparkle) => (
-          <span
-            key={sparkle.id}
-            className="hero-sparkle absolute rounded-full bg-[#f7e7c6]"
-            style={{
-              left: sparkle.left,
-              top: sparkle.top,
-              width: sparkle.size,
-              height: sparkle.size,
-              animationDelay: sparkle.delay,
-              animationDuration: sparkle.duration,
-              boxShadow: "0 0 12px rgba(255, 223, 170, 0.85)",
-            }}
-          />
-        ))}
-
-        <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f1d3a6]/60 to-transparent" />
+    <main className="bg-brown text-white">
+       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f1d3a6]/60 to-transparent" />
 
         {/* NAVBAR */}
 <header className="sticky top-0 z-50 border-b border-white/10 bg-[#241710]/85 backdrop-blur-xl">
@@ -191,66 +160,99 @@ export default function HomePage() {
   </div>
 
   {/* Mobile side drawer */}
+ <div
+  className={`fixed inset-0 z-[110] md:hidden ${
+    mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+  }`}
+>
   <div
-    className={`fixed inset-0 z-[60] md:hidden transition ${
-      mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+    onClick={() => setMobileMenuOpen(false)}
+    className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${
+      mobileMenuOpen ? "opacity-100" : "opacity-0"
+    }`}
+  />
+
+  <aside
+    className={`absolute right-0 top-0 h-full w-[84%] max-w-[360px] bg-[#fcfaf7] shadow-[-10px_0_40px_rgba(0,0,0,0.18)] transition-transform duration-300 ${
+      mobileMenuOpen ? "translate-x-0" : "translate-x-full"
     }`}
   >
-    <div
-      className={`absolute inset-0 bg-black/45 transition-opacity duration-300 ${
-        mobileMenuOpen ? "opacity-100" : "opacity-0"
-      }`}
-      onClick={() => setMobileMenuOpen(false)}
-    />
-
-    <div
-      className={`absolute right-0 top-0 h-full w-[84%] max-w-[360px] bg-[#f8f4ef] p-6 shadow-[-10px_0_40px_rgba(0,0,0,0.18)] transition-transform duration-300 ${
-        mobileMenuOpen ? "translate-x-0" : "translate-x-full"
-      }`}
-    >
-      <div className="flex items-center justify-between border-b border-[#eadac4] pb-5">
-        <div>
-          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#9a7449]">
-            Menu
-          </p>
-          <p className="mt-2 text-xl font-bold text-[#2b1c14]">
-            Judith Ogbara
-          </p>
-        </div>
-
-        <button
-          type="button"
-          onClick={() => setMobileMenuOpen(false)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#dcc3a0] text-[#2b1c14]"
-          aria-label="Close navigation menu"
-        >
-          <span className="text-2xl leading-none">×</span>
-        </button>
+    <div className="flex items-center justify-between border-b border-[#eadac4] px-6 py-5">
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#9a7449]">
+          Menu
+        </p>
+        <p className="mt-2 text-2xl font-bold text-[#2b1c14]">
+          Judith Ogbara
+        </p>
       </div>
 
-      <nav className="mt-6 flex flex-col">
-        {navItems.map((item) => (
-          <a
-            key={item.href}
-            href={item.href}
-            onClick={() => setMobileMenuOpen(false)}
-            className="border-b border-[#eadac4] py-5 text-[1.9rem] font-semibold text-[#1f2435] transition hover:text-[#9a7449]"
-          >
-            {item.label}
-          </a>
+      <button
+        type="button"
+        onClick={() => setMobileMenuOpen(false)}
+        className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-[#dcc3a0] text-[#2b1c14]"
+        aria-label="Close navigation menu"
+      >
+        <span className="text-3xl leading-none">×</span>
+      </button>
+    </div>
+
+    <nav className="px-6 py-3">
+      {navItems.map((item) => (
+        <a
+          key={item.href}
+          href={item.href}
+          onClick={() => setMobileMenuOpen(false)}
+          className="block border-b border-[#eadac4] py-5 text-[1.2rem] font-semibold text-[#1f2435] transition hover:text-[#9a7449]"
+        >
+          {item.label}
+        </a>
+      ))}
+
+      <a
+        href="#contact"
+        onClick={() => setMobileMenuOpen(false)}
+        className="mt-6 inline-flex w-full items-center justify-center rounded-full bg-[#4a2f21] px-5 py-3.5 text-sm font-semibold text-white"
+      >
+        Get in Touch
+      </a>
+    </nav>
+  </aside>
+</div>
+</header>
+      <section id="home" className="relative min-h-screen overflow-hidden bg-[#21150f]">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-70 transition-all duration-300"
+          style={{
+            background: `radial-gradient(circle at ${mousePosition.x}% ${mousePosition.y}%, rgba(212,175,120,0.22), transparent 24%)`,
+          }}
+        />
+
+        <div className="absolute inset-0 bg-[linear-gradient(135deg,#1f140f_0%,#2c1b13_35%,#3b2418_65%,#1b120d_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,221,170,0.14),transparent_28%),radial-gradient(circle_at_bottom_right,rgba(176,129,73,0.22),transparent_28%)]" />
+        <div className="absolute inset-0 opacity-[0.08] [background-image:linear-gradient(to_right,rgba(255,255,255,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.15)_1px,transparent_1px)] [background-size:60px_60px]" />
+
+        <div className="hero-blob absolute left-[-120px] top-[-80px] h-[320px] w-[320px] rounded-full bg-[#c89857]/20 blur-3xl" />
+        <div className="hero-blob-delay absolute bottom-[-120px] right-[-80px] h-[300px] w-[300px] rounded-full bg-[#f1d3a6]/10 blur-3xl" />
+        <div className="hero-blob-slow absolute left-[45%] top-[12%] h-[220px] w-[220px] rounded-full bg-[#9e6f42]/15 blur-3xl" />
+
+        {sparkles.map((sparkle) => (
+          <span
+            key={sparkle.id}
+            className="hero-sparkle absolute rounded-full bg-[#f7e7c6]"
+            style={{
+              left: sparkle.left,
+              top: sparkle.top,
+              width: sparkle.size,
+              height: sparkle.size,
+              animationDelay: sparkle.delay,
+              animationDuration: sparkle.duration,
+              boxShadow: "0 0 12px rgba(255, 223, 170, 0.85)",
+            }}
+          />
         ))}
 
-        <a
-          href="#contact"
-          onClick={() => setMobileMenuOpen(false)}
-          className="mt-6 inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-5 py-3.5 text-sm font-semibold text-white"
-        >
-          Get in Touch
-        </a>
-      </nav>
-    </div>
-  </div>
-</header>
+       
 
 <div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl items-center px-5 pb-8 pt-6 sm:px-6 md:pb-16 md:pt-10 lg:px-10">
   <div className="grid w-full items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
@@ -437,27 +439,31 @@ export default function HomePage() {
       <div className="relative order-2 lg:order-1">
         <div className="absolute -left-3 -top-3 h-full w-full rounded-[2rem] border border-[#dcc3a0]/40 sm:-left-4 sm:-top-4" />
 
-        <div className="relative overflow-hidden rounded-[2rem] bg-[#f4eadf] p-3 shadow-[0_20px_60px_rgba(43,28,20,0.08)]">
-          <div className="relative h-[330px] overflow-hidden rounded-[1.5rem] bg-[#e8d8c5] sm:h-[420px] lg:h-[520px]">
-            <Image
-              src="/images/4.jpeg"
-              alt="Hon. Dr. Judith Mayen Ogbara"
-              fill
-              className="object-cover object-top"
-            />
-          </div>
-        </div>
+        <div className="relative order-2 lg:order-1">
+  <div className="absolute -left-3 -top-3 h-full w-full rounded-[2rem] border border-[#dcc3a0]/40 sm:-left-4 sm:-top-4" />
 
-        <div className="absolute bottom-4 right-4 max-w-[210px] rounded-2xl border border-[#ead7bb] bg-white/92 p-4 shadow-[0_12px_40px_rgba(43,28,20,0.08)] backdrop-blur sm:-bottom-5 sm:right-6 sm:max-w-[240px] sm:p-5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.28em]">
-            Profile Snapshot
-          </p>
-          <p className="mt-3 text-sm leading-7 text-[#6d5746]">
-            A public servant and advocate whose work reflects service,
-            leadership, and measurable community impact.
-          </p>
-        </div>
-      </div>
+  <div className="relative overflow-hidden rounded-[2rem] bg-[#f4eadf] p-3 shadow-[0_20px_60px_rgba(43,28,20,0.08)]">
+    <div className="relative h-[330px] overflow-hidden rounded-[1.5rem] bg-[#e8d8c5] sm:h-[420px] lg:h-[520px]">
+      <Image
+        src="/images/4.jpeg"
+        alt="Hon. Dr. Judith Mayen Ogbara"
+        fill
+        className="object-cover object-top"
+      />
+    </div>
+  </div>
+
+  <div className="absolute bottom-4 right-4 max-w-[185px] rounded-2xl border border-[#ead7bb] bg-white/94 p-4 shadow-[0_12px_40px_rgba(43,28,20,0.08)] backdrop-blur sm:-bottom-5 sm:right-6 sm:max-w-[240px] sm:p-5">
+    <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#9a7449] sm:tracking-[0.28em]">
+      Profile Snapshot
+    </p>
+    <p className="mt-3 text-sm leading-7 text-[#6d5746]">
+      A public servant and advocate whose work reflects service,
+      leadership, and measurable community impact.
+    </p>
+  </div>
+</div>
+</div>
 
       <div className="order-1 lg:order-2">
         <p className="text-sm font-bold uppercase tracking-[0.26em] text-[#9a7449] sm:tracking-[0.3em]">
@@ -485,28 +491,28 @@ export default function HomePage() {
             lasting change.
           </p>
 
-          <p className="max-w-3xl text-[15px] leading-8 text-[#6d5746] sm:text-lg">
+          <p className="hidden max-w-3xl text-[15px] leading-8 text-[#6d5746] sm:block sm:text-lg">
             Her public engagement continues to reflect a deep sense of duty to the
             people, especially through efforts that strengthen opportunity,
             accountability, and sustainable development across communities.
           </p>
         </div>
 
-        <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
-          <a
-            href="#vision"
-            className="inline-flex w-full items-center justify-center rounded-full bg-[#4a2f21] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#2f1d14] sm:w-auto"
-          >
-            Explore Mandate & Vision
-          </a>
+       <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:gap-4">
+  <a
+    href="#vision"
+    className="inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-sm font-semibold text-white transition hover:bg-[#2f1d14] sm:px-6"
+  >
+    Explore Mandate & Vision
+  </a>
 
-          <a
-            href="#impact"
-            className="inline-flex w-full items-center justify-center rounded-full border border-[#caa77a] px-6 py-3 text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3] sm:w-auto"
-          >
-            View Impact
-          </a>
-        </div>
+  <a
+    href="#impact"
+    className="inline-flex items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3] sm:px-6"
+  >
+    View Impact
+  </a>
+</div>
 
         <div className="mt-8 grid grid-cols-2 gap-4 xl:grid-cols-4">
           <div className="rounded-2xl border border-[#eadac4] bg-white p-4 shadow-sm sm:p-5">
@@ -614,12 +620,14 @@ export default function HomePage() {
     </div>
 
     <div className="mt-6 rounded-[2rem] border border-[#d4af78]/20 bg-[linear-gradient(90deg,rgba(212,175,120,0.14),rgba(255,255,255,0.03))] px-5 py-5 backdrop-blur-xl sm:mt-8 sm:px-6 sm:py-7">
+    <div className="mt-8 hidden rounded-[2rem] ... lg:block"></div>
       <p className="text-[11px] font-semibold uppercase tracking-[0.26em] text-[#d9bb8d] sm:tracking-[0.3em]">
         Featured Note
       </p>
       <p className="mt-3 text-xl font-semibold leading-relaxed text-white sm:text-2xl">
         “Before the Crowd, There was the Work.”
       </p>
+     
       <p className="mt-3 text-sm leading-7 text-[#eadfce]/75 sm:text-base sm:leading-8">
         A leadership journey shaped not by noise, but by years of visible service,
         consistent action, and meaningful outcomes across communities.
