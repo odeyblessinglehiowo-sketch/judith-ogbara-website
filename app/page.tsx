@@ -115,9 +115,9 @@ export default function HomePage() {
         <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#f1d3a6]/60 to-transparent" />
 
         {/* NAVBAR */}
-<header className="relative z-30">
-  <div className="mx-auto max-w-7xl px-5 pt-4 sm:px-6 lg:px-10 lg:pt-6">
-    <div className="flex items-center justify-between rounded-full border border-white/10 bg-white/[0.04] px-3 py-3 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.22)] sm:px-4 lg:px-6">
+<header className="sticky top-0 z-50 border-b border-white/10 bg-[#241710]/85 backdrop-blur-xl">
+  <div className="mx-auto max-w-7xl px-0 sm:px-0 lg:px-6">
+    <div className="flex items-center justify-between px-4 py-4 sm:px-6 lg:rounded-none lg:border-none lg:bg-transparent lg:px-4 lg:py-5">
       <a href="#home" className="flex items-center gap-3">
         <div className="relative h-11 w-11 overflow-hidden rounded-full border border-[#d9bb8d]/30 bg-white/10">
           <Image
@@ -138,7 +138,6 @@ export default function HomePage() {
         </div>
       </a>
 
-      {/* Desktop nav */}
       <nav className="hidden items-center gap-1 md:flex">
         {navItems.map((item) => {
           const isActive = activeSection === item.href;
@@ -154,7 +153,6 @@ export default function HomePage() {
               }`}
             >
               <span className="relative z-10">{item.label}</span>
-
               <span
                 className={`absolute inset-x-4 bottom-1 h-px origin-left bg-gradient-to-r from-[#d4af78] to-[#f2d4a8] transition-transform duration-300 ${
                   isActive
@@ -162,16 +160,11 @@ export default function HomePage() {
                     : "scale-x-0 group-hover:scale-x-100"
                 }`}
               />
-
-              {!isActive && (
-                <span className="absolute inset-0 rounded-full opacity-0 transition duration-300 group-hover:bg-white/[0.05] group-hover:opacity-100" />
-              )}
             </a>
           );
         })}
       </nav>
 
-      {/* Desktop CTA */}
       <a
         href="#contact"
         className="group relative hidden overflow-hidden rounded-full border border-[#d8b07a]/45 bg-white/[0.05] px-6 py-3 text-sm font-semibold text-[#f5e5cc] backdrop-blur md:inline-flex"
@@ -180,129 +173,137 @@ export default function HomePage() {
           Get in Touch
         </span>
         <span className="absolute inset-0 bg-gradient-to-r from-[#d4af78] to-[#f0d2a4] opacity-0 transition duration-300 group-hover:opacity-100" />
-        <span className="absolute inset-0 rounded-full shadow-[0_0_26px_rgba(212,175,120,0.0)] transition duration-300 group-hover:shadow-[0_0_26px_rgba(212,175,120,0.35)]" />
       </a>
 
-      {/* Mobile hamburger */}
       <button
         type="button"
-        onClick={() => setMobileMenuOpen((prev) => !prev)}
+        onClick={() => setMobileMenuOpen(true)}
         className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#d8b07a]/35 bg-white/[0.05] text-[#f5e5cc] backdrop-blur transition hover:bg-white/[0.1] md:hidden"
-        aria-label="Toggle navigation menu"
-        aria-expanded={mobileMenuOpen}
+        aria-label="Open navigation menu"
       >
         <div className="relative flex h-4 w-5 flex-col items-center justify-center">
-          <span
-            className={`absolute h-[2px] w-5 rounded-full bg-current transition duration-300 ${
-              mobileMenuOpen ? "rotate-45" : "-translate-y-[6px]"
-            }`}
-          />
-          <span
-            className={`absolute h-[2px] w-5 rounded-full bg-current transition duration-300 ${
-              mobileMenuOpen ? "opacity-0" : "opacity-100"
-            }`}
-          />
-          <span
-            className={`absolute h-[2px] w-5 rounded-full bg-current transition duration-300 ${
-              mobileMenuOpen ? "-rotate-45" : "translate-y-[6px]"
-            }`}
-          />
+          <span className="absolute h-[2px] w-5 -translate-y-[6px] rounded-full bg-current" />
+          <span className="absolute h-[2px] w-5 rounded-full bg-current" />
+          <span className="absolute h-[2px] w-5 translate-y-[6px] rounded-full bg-current" />
         </div>
       </button>
     </div>
+  </div>
 
-    {/* Mobile dropdown */}
+  {/* Mobile side drawer */}
+  <div
+    className={`fixed inset-0 z-[60] md:hidden transition ${
+      mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+    }`}
+  >
     <div
-      className={`overflow-hidden transition-all duration-300 md:hidden ${
-        mobileMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+      className={`absolute inset-0 bg-black/45 transition-opacity duration-300 ${
+        mobileMenuOpen ? "opacity-100" : "opacity-0"
+      }`}
+      onClick={() => setMobileMenuOpen(false)}
+    />
+
+    <div
+      className={`absolute right-0 top-0 h-full w-[84%] max-w-[360px] bg-[#f8f4ef] p-6 shadow-[-10px_0_40px_rgba(0,0,0,0.18)] transition-transform duration-300 ${
+        mobileMenuOpen ? "translate-x-0" : "translate-x-full"
       }`}
     >
-      <div className="mt-3 rounded-[1.75rem] border border-white/10 bg-[#2a1b14]/90 p-3 shadow-[0_18px_50px_rgba(0,0,0,0.25)] backdrop-blur-xl">
-        <nav className="flex flex-col gap-2">
-          {navItems.map((item) => {
-            const isActive = activeSection === item.href;
+      <div className="flex items-center justify-between border-b border-[#eadac4] pb-5">
+        <div>
+          <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#9a7449]">
+            Menu
+          </p>
+          <p className="mt-2 text-xl font-bold text-[#2b1c14]">
+            Judith Ogbara
+          </p>
+        </div>
 
-            return (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={() => setMobileMenuOpen(false)}
-                className={`rounded-2xl px-4 py-3 text-sm font-medium transition ${
-                  isActive
-                    ? "bg-[#d4af78]/18 text-[#f3d19f]"
-                    : "text-[#f7efe4]/85 hover:bg-white/[0.05] hover:text-white"
-                }`}
-              >
-                {item.label}
-              </a>
-            );
-          })}
-
-          <a
-            href="#contact"
-            onClick={() => setMobileMenuOpen(false)}
-            className="mt-2 inline-flex items-center justify-center rounded-full bg-[#d4af78] px-5 py-3 text-sm font-semibold text-[#2a1a12] shadow-[0_0_25px_rgba(212,175,120,0.22)] transition hover:bg-[#e0bd89]"
-          >
-            Get in Touch
-          </a>
-        </nav>
+        <button
+          type="button"
+          onClick={() => setMobileMenuOpen(false)}
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#dcc3a0] text-[#2b1c14]"
+          aria-label="Close navigation menu"
+        >
+          <span className="text-2xl leading-none">×</span>
+        </button>
       </div>
+
+      <nav className="mt-6 flex flex-col">
+        {navItems.map((item) => (
+          <a
+            key={item.href}
+            href={item.href}
+            onClick={() => setMobileMenuOpen(false)}
+            className="border-b border-[#eadac4] py-5 text-[1.9rem] font-semibold text-[#1f2435] transition hover:text-[#9a7449]"
+          >
+            {item.label}
+          </a>
+        ))}
+
+        <a
+          href="#contact"
+          onClick={() => setMobileMenuOpen(false)}
+          className="mt-6 inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-5 py-3.5 text-sm font-semibold text-white"
+        >
+          Get in Touch
+        </a>
+      </nav>
     </div>
   </div>
 </header>
 
-  <div className="relative z-10 mx-auto flex min-h-[calc(100vh-84px)] max-w-7xl items-center px-5 pb-10 pt-6 sm:px-6 md:pb-16 md:pt-10 lg:px-10">
-  <div className="grid w-full items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
+<div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl items-center px-5 pb-8 pt-6 sm:px-6 md:pb-16 md:pt-10 lg:px-10">
+  <div className="grid w-full items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
     <div className="max-w-3xl">
-      <div className="mb-4 inline-flex items-center rounded-full border border-[#d4af78]/30 bg-white/5 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.28em] text-[#d9bb8d] backdrop-blur sm:text-[11px] sm:tracking-[0.35em]">
+      <div className="mb-4 inline-flex items-center rounded-full border border-[#d4af78]/30 bg-white/5 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] backdrop-blur sm:text-[11px] sm:tracking-[0.35em]">
         Public Servant • Philanthropist • Governance Advocate
       </div>
 
-      <h1 className="max-w-3xl text-[2.9rem] font-bold leading-[0.98] text-white sm:text-6xl lg:text-7xl">
+      <h1 className="max-w-3xl text-[2.8rem] font-bold leading-[0.95] text-white sm:text-6xl lg:text-7xl">
         Hon. Dr. Judith
         <span className="block text-[#f0d1a0]">Mayen Ogbara</span>
       </h1>
 
-      <p className="mt-5 max-w-2xl text-[1.05rem] leading-8 text-[#efe3d4]/85 sm:mt-7 sm:text-lg sm:leading-8 md:text-xl">
+      <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-[#efe3d4]/85 sm:mt-7 sm:text-lg md:text-xl">
         A distinguished leader committed to empowering communities,
         advancing education, and promoting inclusive governance through
         service, integrity, and lasting impact.
       </p>
 
-      <div className="mt-7 flex flex-col gap-3 sm:mt-8 sm:flex-row sm:flex-wrap sm:gap-4">
+      <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:flex sm:flex-wrap sm:gap-4">
         <a
           href="#about"
-          className="inline-flex w-full items-center justify-center rounded-full bg-[#d4af78] px-6 py-3.5 text-sm font-semibold text-[#2a1a12] shadow-[0_0_25px_rgba(212,175,120,0.25)] transition hover:scale-[1.02] hover:bg-[#e0bd89] sm:w-auto sm:px-7"
+          className="inline-flex items-center justify-center rounded-full bg-[#d4af78] px-4 py-3 text-sm font-semibold text-[#2a1a12] shadow-[0_0_25px_rgba(212,175,120,0.25)] transition hover:scale-[1.02] hover:bg-[#e0bd89] sm:px-7"
         >
           About Her
         </a>
 
         <a
           href="#impact"
-          className="inline-flex w-full items-center justify-center rounded-full border border-[#e5c798]/45 bg-white/5 px-6 py-3.5 text-sm font-semibold text-[#f6ead9] backdrop-blur transition hover:bg-white/10 sm:w-auto sm:px-7"
+          className="inline-flex items-center justify-center rounded-full border border-[#e5c798]/45 bg-white/5 px-4 py-3 text-sm font-semibold text-[#f6ead9] backdrop-blur transition hover:bg-white/10 sm:px-7"
         >
           View Impact
         </a>
       </div>
 
-      <div className="mt-8 grid gap-4 sm:mt-10 sm:grid-cols-2 xl:grid-cols-3">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur sm:p-4">
-          <p className="text-2xl font-bold text-[#f1d3a6]">500+</p>
-          <p className="mt-1 text-sm leading-6 text-[#f5ebdf]/75">
+      <div className="mt-6 grid grid-cols-3 gap-3 sm:mt-10 xl:grid-cols-3">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+          <p className="text-[1.9rem] font-bold leading-none text-[#f1d3a6]">500+</p>
+          <p className="mt-2 text-[13px] leading-5 text-[#f5ebdf]/75">
             Female students supported
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur sm:p-4">
-          <p className="text-2xl font-bold text-[#f1d3a6]">5,000+</p>
-          <p className="mt-1 text-sm leading-6 text-[#f5ebdf]/75">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+          <p className="text-[1.9rem] font-bold leading-none text-[#f1d3a6]">5,000+</p>
+          <p className="mt-2 text-[13px] leading-5 text-[#f5ebdf]/75">
             Girls empowered through outreach
           </p>
         </div>
 
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-4 backdrop-blur sm:col-span-2 xl:col-span-1 sm:p-4">
-          <p className="text-2xl font-bold text-[#f1d3a6]">50</p>
-          <p className="mt-1 text-sm leading-6 text-[#f5ebdf]/75">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+          <p className="text-[1.9rem] font-bold leading-none text-[#f1d3a6]">50</p>
+          <p className="mt-2 text-[13px] leading-5 text-[#f5ebdf]/75">
             Women supported with SME grants
           </p>
         </div>
@@ -310,14 +311,14 @@ export default function HomePage() {
     </div>
 
     <div className="relative flex justify-center lg:justify-end">
-      <div className="hero-card relative w-full max-w-[430px] sm:max-w-[480px]">
+      <div className="hero-card relative w-full max-w-[420px] sm:max-w-[480px]">
         <div className="absolute inset-0 rounded-[2rem] bg-[#d4af78]/10 blur-2xl" />
         <div className="absolute -inset-2 rounded-[2.1rem] border border-[#e8c998]/15 sm:-inset-3 sm:rounded-[2.3rem]" />
 
         <div className="relative overflow-hidden rounded-[2rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.08),rgba(255,255,255,0.03))] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.45)] backdrop-blur">
-          <div className="relative h-[380px] overflow-hidden rounded-[1.6rem] bg-[#5b3b27] sm:h-[460px] lg:h-[540px]">
+          <div className="relative h-[360px] overflow-hidden rounded-[1.6rem] bg-[#5b3b27] sm:h-[460px] lg:h-[540px]">
             <Image
-              src="/images/judith-hero.png"
+              src="/images/judith-hero.jpg"
               alt="Hon. Dr. Judith Mayen Ogbara portrait"
               fill
               priority
@@ -332,8 +333,8 @@ export default function HomePage() {
           </div>
         </div>
 
-        <div className="absolute -bottom-4 left-1/2 w-[90%] -translate-x-1/2 rounded-2xl border border-white/10 bg-[#2a1b14]/70 px-4 py-3 backdrop-blur sm:-bottom-5 sm:w-[88%] sm:px-5 sm:py-4">
-          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#ffffff] sm:text-[11px] sm:tracking-[0.3em]">
+        <div className="absolute -bottom-4 left-1/2 w-[92%] -translate-x-1/2 rounded-2xl border border-white/10 bg-[#2a1b14]/78 px-4 py-3 backdrop-blur sm:-bottom-5 sm:w-[88%]">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#d9bb8d] sm:text-[11px] sm:tracking-[0.3em]">
             Before the crowd, there was the work
           </p>
         </div>
@@ -341,7 +342,7 @@ export default function HomePage() {
     </div>
   </div>
 </div>
-
+         
         <style jsx global>{`
           html {
             scroll-behavior: smooth;
