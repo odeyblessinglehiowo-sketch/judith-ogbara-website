@@ -17,12 +17,12 @@ import {
   
 } from "react-icons/fa6";
 const navItems = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Impact", href: "#impact" },
-  { label: "Mandate & Vision", href: "#vision" },
-  { label: "Gallery", href: "#gallery" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About", href: "/about" },
+  { label: "Impact", href: "/impact" },
+  { label: "Leadership", href: "/leadership" },
+  { label: "Leadership in Action", href: "/leadership-in-action" },
+  { label: "Contact", href: "/contact" },
 ];
 export default function HomePage() {
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
@@ -40,9 +40,11 @@ export default function HomePage() {
     };
 
     const handleScroll = () => {
-      const sections = navItems
-        .map((item) => document.querySelector(item.href))
-        .filter(Boolean) as Element[];
+     const sections = navItems
+  .filter((item) => item.href.startsWith("#"))
+  .map((item) => document.querySelector(item.href))
+  .filter(Boolean) as Element[];
+        
 
       const scrollPosition = window.scrollY + 140;
 
