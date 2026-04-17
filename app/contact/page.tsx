@@ -47,7 +47,7 @@ export default function ContactPage() {
           <Link href="/" className="flex items-center gap-3">
             <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl border border-[#d9bb8d]/30 bg-gold/10">
                      <Image
-                       src="/images/judith-logo1.png"
+                       src="/images/judith-logo2.png"
                        alt="Judith Ogbara logo"
                        fill
                        className="object-cover p-0"
@@ -421,7 +421,7 @@ export default function ContactPage() {
              <div className="flex items-center gap-3">
                <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
                  <Image
-                   src="/images/judith-logo.png"
+                   src="/images/judith-logo2.png"
                    alt="Judith Ogbara logo"
                    fill
                    className="object-contain p-0"

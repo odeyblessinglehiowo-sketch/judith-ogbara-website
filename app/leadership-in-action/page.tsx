@@ -82,49 +82,49 @@ const galleryTop = [
 
 const galleryBottom = [
   {
-    image: "/images/P65.jpeg",
+    image: "/images/p65.jpeg",
     title: "RISE Flag-Off Address",
     caption:
       "A moment of purpose at the RISE Training flag-off, marking the beginning of a journey focused on inclusion, support, and empowerment.",
   },
   {
-    image: "/images/P66.jpeg",
+    image: "/images/p66.jpeg",
     title: "A Shared Commitment to Impact",
     caption:
       "A warm exchange with the Acting First Lady of Akwa Ibom State, reflecting shared commitment to community development and meaningful impact.",
   },
   {
-    image: "/images/P67.jpeg",
+    image: "/images/p67.jpeg",
     title: "A Meaningful Hand-Over",
     caption:
       "A simple but memorable moment with a beneficiary, where practical support met preparation, confidence, and hope.",
   },
   {
-    image: "/images/P68.jpeg",
+    image: "/images/p68.jpeg",
     title: "Global Collaboration at RISE",
     caption:
       "Engaging with Mrs. Ross during the RISE flag-off and reflecting the strength of partnerships that widen opportunity and support.",
   },
   {
-    image: "/images/P69.jpeg",
+    image: "/images/p69.jpeg",
     title: "Women Empowerment Support",
     caption:
       "Standing with women in Akwa Ibom through empowerment efforts designed to create real support and lasting value.",
   },
   {
-    image: "/images/P70.jpeg",
+    image: "/images/p70.jpeg",
     title: "Strategic Leadership Engagement",
     caption:
       "A moment of leadership engagement and mutual respect, strengthening relationships that support purposeful work and public service.",
   },
   {
-    image: "/images/P71.jpeg",
+    image: "/images/p71.jpeg",
     title: "Educational Support for Young Learners",
     caption:
       "Sharing a meaningful moment with schoolchildren in Akwa Ibom and reinforcing the importance of investing in learning and the future.",
   },
   {
-    image: "/images/P72.jpeg",
+    image: "/images/p72.jpeg",
     title: "Women’s Empowerment Initiative",
     caption:
       "Celebrating resilience, progress, and community strength through an empowerment initiative that placed women at the center.",
@@ -167,12 +167,12 @@ const stripImages = [
     
   },
   {
-    image: "/images/P73.jpeg",
+    image: "/images/p73.jpeg",
     title: "",
     
   },
   {
-    image: "/images/P74.jpeg",
+    image: "/images/p74.jpeg",
     title: "",
   },
 ];
@@ -249,7 +249,7 @@ export default function LeadershipInActionPage() {
             <a href="#home" className="flex items-center gap-3">
               <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-white/[0.04] shadow-[0_10px_30px_rgba(0,0,0,0.25)]">
                 <Image
-                  src="/images/judith-logo1.png"
+                  src="/images/judith-logo2.png"
                   alt="Judith Ogbara logo"
                   fill
                   className="object-cover"
@@ -611,7 +611,7 @@ export default function LeadershipInActionPage() {
               <div className="flex items-center gap-3">
                 <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
                   <Image
-                    src="/images/judith-logo.png"
+                    src="/images/judith-logo2.png"
                     alt="Judith Ogbara logo"
                     fill
                     className="object-contain p-0"
