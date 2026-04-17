@@ -50,7 +50,7 @@ const leadershipTabs = [
 
 const roleCards = [
   {
-    title: "G4EP / GEEEEP Advisory Leadership",
+    title: "GEEEEP Advisory Leadership",
     text: "Federal-level leadership within a gender-focused education and empowerment initiative.",
   },
   {
@@ -150,7 +150,7 @@ export default function LeadershipPage() {
       <Link href="/" className="flex items-center gap-3">
         <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-white/[0.03]">
           <Image
-            src="/images/jjudith-logo2.png"
+            src="/images/p64.jpeg"
             alt="Judith Ogbara logo"
             fill
             className="object-cover"
@@ -518,7 +518,7 @@ export default function LeadershipPage() {
       <div className="flex h-full flex-col gap-4">
         <div className="flex-1 rounded-[1.6rem] border border-[#eadac4] bg-white p-5 shadow-sm">
           <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
-            G4EP / GEEEEP Advisory Leadership
+            GEEEEP Advisory Leadership
           </p>
           <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
             Hon. Judith was appointed to leadership responsibility within a federal-level education, engagement, empowerment, and entrepreneurship initiative focused on development and opportunity.

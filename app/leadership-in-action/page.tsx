@@ -82,7 +82,7 @@ const galleryTop = [
 
 const galleryBottom = [
   {
-    image: "/images/p65.jpeg",
+    image: "/images/p64.jpeg",
     title: "RISE Flag-Off Address",
     caption:
       "A moment of purpose at the RISE Training flag-off, marking the beginning of a journey focused on inclusion, support, and empowerment.",
