@@ -150,7 +150,7 @@ export default function LeadershipPage() {
       <Link href="/" className="flex items-center gap-3">
         <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl border border-white/20 bg-white/[0.03]">
           <Image
-            src="/images/p64.jpeg"
+            src="/images/judith-logo2.png"
             alt="Judith Ogbara logo"
             fill
             className="object-cover"
