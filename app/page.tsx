@@ -89,15 +89,16 @@ export default function HomePage() {
 
         {/* NAVBAR */}
 <header className="sticky top-0 z-50 w-full px-0 pt-0">
-  <div className="border-b border-white/10 bg-[#2a1b14]/85 px-4 py-3 backdrop-blur-xl sm:px-6 lg:px-10">
+  <div className="border-b border-white/10 bg-[#2a1b14]/90 px-4 py-3 backdrop-blur-xl sm:px-6 lg:px-10">
     <div className="mx-auto flex max-w-7xl items-center justify-between">
+      {/* Logo (UNCHANGED) */}
       <a href="#home" className="flex items-center gap-3">
-        <div className="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl border border-[#d9bb8d]/30 bg-white/10">
+        <div className="relative flex h-20 w-20 items-center justify-center overflow-hidden rounded-xl border border-[#d9bb8d]/30 bg-gold/10">
           <Image
-            src="/images/judith-logo.png"
+            src="/images/judith-logo1.png"
             alt="Judith Ogbara logo"
             fill
-            className="object-contain p-2"
+            className="object-cover"
           />
         </div>
 
@@ -105,7 +106,7 @@ export default function HomePage() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[#f3ddbc]">
             Judith Ogbara
           </p>
-          <p className="mt-0.5 text-xs text-[#f8ede0]/60">
+          <p className="mt-0.5 text-xs text-[#f8ede0]/65">
             Official Profile
           </p>
         </div>
@@ -120,10 +121,10 @@ export default function HomePage() {
             <a
               key={item.href}
               href={item.href}
-              className={`group relative rounded-full px-4 py-2.5 text-sm font-medium transition duration-300 ${
+              className={`group relative rounded-full px-4 py-2.5 text-sm font-medium transition ${
                 isActive
                   ? "bg-[#d4af78]/16 text-[#f3d19f]"
-                  : "text-[#f7efe4]/82 hover:text-white"
+                  : "text-[#f7efe4]/85 hover:text-white"
               }`}
             >
               <span className="relative z-10">{item.label}</span>
@@ -142,7 +143,7 @@ export default function HomePage() {
       {/* Desktop CTA */}
       <a
         href="#contact"
-        className="group relative hidden overflow-hidden rounded-full border border-[#d8b07a]/45 bg-white/[0.05] px-6 py-3 text-sm font-semibold text-[#f5e5cc] backdrop-blur md:inline-flex"
+        className="group relative hidden overflow-hidden rounded-full border border-[#d8b07a]/45 bg-white/[0.05] px-6 py-3 text-sm font-semibold text-[#f5e5cc] backdrop-blur transition md:inline-flex"
       >
         <span className="relative z-10 transition duration-300 group-hover:text-[#24160f]">
           Get in Touch
@@ -154,13 +155,13 @@ export default function HomePage() {
       <button
         type="button"
         onClick={() => setMobileMenuOpen(true)}
-        className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#d8b07a]/35 bg-white/[0.05] text-[#f5e5cc] backdrop-blur transition hover:bg-white/[0.1] md:hidden"
+        className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#d8b07a]/40 bg-white/[0.06] text-[#f5e5cc] backdrop-blur transition hover:bg-white/[0.12] md:hidden"
         aria-label="Open navigation menu"
       >
-        <div className="flex h-4 w-5 flex-col items-center justify-between">
-          <span className="h-[2px] w-5 rounded-full bg-current" />
-          <span className="h-[2px] w-5 rounded-full bg-current" />
-          <span className="h-[2px] w-5 rounded-full bg-current" />
+        <div className="flex h-5 w-6 flex-col items-center justify-between">
+          <span className="h-[2.5px] w-6 rounded-full bg-[#f5e5cc]" />
+          <span className="h-[2.5px] w-6 rounded-full bg-[#f5e5cc]" />
+          <span className="h-[2.5px] w-6 rounded-full bg-[#f5e5cc]" />
         </div>
       </button>
     </div>
@@ -168,10 +169,12 @@ export default function HomePage() {
 
   {/* Mobile side drawer */}
   <div
-    className={`fixed inset-0 z-[60] md:hidden ${mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"}`}
+    className={`fixed inset-0 z-[60] md:hidden ${
+      mobileMenuOpen ? "pointer-events-auto" : "pointer-events-none"
+    }`}
   >
     <div
-      className={`absolute inset-0 bg-black/45 transition-opacity duration-300 ${
+      className={`absolute inset-0 bg-black/50 transition-opacity duration-300 ${
         mobileMenuOpen ? "opacity-100" : "opacity-0"
       }`}
       onClick={() => setMobileMenuOpen(false)}
@@ -195,8 +198,7 @@ export default function HomePage() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(false)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#e1d4c1] text-[#2b1c14]"
-          aria-label="Close navigation menu"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-xl border border-[#e1d4c1] text-[#2b1c14] transition hover:bg-[#f4ede5]"
         >
           <span className="text-3xl leading-none">×</span>
         </button>
@@ -209,7 +211,11 @@ export default function HomePage() {
               key={item.href}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="py-5 text-[1.9rem] font-semibold leading-none text-[#1f1f1f]"
+              className={`py-4 text-[1.05rem] font-semibold ${
+                activeSection === item.href
+                  ? "text-[#8b6438]"
+                  : "text-[#1f1f1f]"
+              }`}
             >
               {item.label}
             </a>
@@ -261,17 +267,25 @@ export default function HomePage() {
 
 <div className="relative z-10 mx-auto flex min-h-[calc(100vh-72px)] max-w-7xl items-center px-5 pb-8 pt-6 sm:px-6 md:pb-16 md:pt-10 lg:px-10">
   <div className="grid w-full items-center gap-6 lg:grid-cols-[1.15fr_0.85fr] lg:gap-14">
-    <div className="max-w-3xl">
-      <div className="mb-4 inline-flex items-center rounded-full border border-[#d4af78]/30 bg-white/5 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] backdrop-blur sm:text-[11px] sm:tracking-[0.35em]">
+    
+    {/* TEXT BLOCK */}
+    <div className="mx-auto max-w-3xl text-center lg:mx-0 lg:text-left">
+      
+      {/* Tag */}
+      <div className="mb-4 inline-flex items-center justify-center rounded-full border border-[#d4af78]/30 bg-white/5 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] backdrop-blur sm:text-[11px] sm:tracking-[0.35em]">
         Public Servant • Philanthropist • Governance Advocate
       </div>
 
-      <h1 className="max-w-3xl text-[2.8rem] font-bold leading-[0.98] text-white sm:text-6xl lg:text-7xl">
+      {/* Heading */}
+      <h1 className="text-[2.6rem] font-bold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
         Hon. Dr. Judith
-        <span className="block text-[#f0d1a0]">Mayen Ogbara</span>
+        <span className="block text-[#f0d1a0]">
+          Mayen Ogbara
+        </span>
       </h1>
 
-      <p className="mt-4 max-w-2xl text-[1.02rem] leading-8 text-[#efe3d4]/85 sm:mt-7 sm:text-lg md:text-xl">
+      {/* Paragraph */}
+      <p className="mt-4 mx-auto max-w-2xl text-[1rem] leading-8 text-[#efe3d4]/85 sm:mt-7 sm:text-lg md:text-xl lg:mx-0">
         A distinguished leader committed to empowering communities, advancing
         education, and promoting inclusive governance through service, integrity,
         and lasting impact.
@@ -279,14 +293,14 @@ export default function HomePage() {
 
       <div className="mt-6 grid grid-cols-2 gap-3 sm:mt-8 sm:flex sm:flex-wrap sm:gap-4">
         <a
-          href="#about"
+          href="/about"
           className="inline-flex items-center justify-center rounded-full bg-[#d4af78] px-4 py-3 text-sm font-semibold text-[#2a1a12] shadow-[0_0_25px_rgba(212,175,120,0.25)] transition hover:scale-[1.02] hover:bg-[#e0bd89]"
         >
           About Her
         </a>
 
         <a
-          href="#impact"
+          href="/impact"
           className="inline-flex items-center justify-center rounded-full border border-[#e5c798]/45 bg-white/5 px-4 py-3 text-sm font-semibold text-[#f6ead9] backdrop-blur transition hover:bg-white/10"
         >
           View Impact
@@ -498,7 +512,7 @@ export default function HomePage() {
           </a>
 
           <a
-            href="#impact"
+            href="/impact"
             className="inline-flex items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3]"
           >
             View Impact
@@ -696,7 +710,7 @@ export default function HomePage() {
       </a>
 
       <a
-        href="#contact"
+        href="/contact"
         className="inline-flex items-center justify-center rounded-full border border-[#e5c798]/35 bg-white/5 px-4 py-3 text-sm font-semibold text-[#f6ead9] backdrop-blur transition hover:bg-white/10 sm:px-7 sm:py-3.5"
       >
         Contact Team
@@ -942,7 +956,7 @@ export default function HomePage() {
       <article className="group overflow-hidden rounded-[1.75rem] border border-[#eadac4] bg-white shadow-[0_18px_50px_rgba(43,28,20,0.06)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_70px_rgba(43,28,20,0.1)]">
         <div className="relative h-[260px] overflow-hidden sm:h-[320px]">
           <Image
-            src="/images/action-0.jpg"
+            src="/images/action-02.jpg"
             alt="Judith serving on the APC convention medical team"
             fill
             className="object-cover object-top transition duration-500 group-hover:scale-105"
