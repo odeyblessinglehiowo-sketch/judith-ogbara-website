@@ -139,7 +139,7 @@ export default function AboutPage() {
           <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#9a7449]">
             Menu
           </p>
-          <p className="mt-1 text-sm text-[#6d5746]">Judith Ogbara</p>
+          <p className="mt-1 text-sm text-[#6d5746]">Hon. Dr. Judith Ogbara</p>
         </div>
 
         <button
