@@ -18,6 +18,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Impact", href: "/impact" },
+  { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
   { label: "Leadership in Action", href: "/leadership-in-action" },
   { label: "Contact", href: "/contact" },
@@ -584,21 +585,21 @@ export default function LeadershipInActionPage() {
               Explore the wider leadership profile and impact story behind these moments.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/impact"
-                className="inline-flex items-center justify-center rounded-full bg-[#d4af78] px-5 py-3 text-sm font-semibold text-[#2a1a12] transition hover:bg-[#e0bd89]"
-              >
-                Explore Impact
-              </Link>
+            <div className="mt-7 flex gap-3 w-full max-w-md">
+  <Link
+    href="/impact"
+    className="flex-1 inline-flex items-center justify-center rounded-full bg-[#d4af78] px-4 py-3 text-sm font-semibold text-[#2a1a12] transition hover:bg-[#e0bd89]"
+  >
+    Explore Impact
+  </Link>
 
-              <Link
-                href="/leadership"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                Leadership Profile
-              </Link>
-            </div>
+  <Link
+    href="/leadership"
+    className="flex-1 inline-flex items-center justify-center rounded-full border border-white/20 px-4 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+  >
+    Leadership
+  </Link>
+</div>
           </div>
         </div>
       </section>

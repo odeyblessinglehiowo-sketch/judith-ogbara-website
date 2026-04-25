@@ -15,6 +15,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Impact", href: "/impact" },
+  { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
   { label: "Leadership in Action", href: "/leadership-in-action" },
   { label: "Contact", href: "/contact" },
@@ -213,18 +214,18 @@ export default function AboutPage() {
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
+        <div className="mt-6 flex gap-3 w-full max-w-md justify-center lg:justify-start">
 
           <Link
             href="/impact"
-            className="inline-flex w-full items-center justify-center rounded-full bg-[#d4af78] px-5 py-3 text-sm font-semibold text-[#2b1c14] transition hover:bg-[#e2bf8c] sm:w-auto"
+            className="flex 1 inline-flex w-full items-center justify-center rounded-full bg-[#d4af78] px-5 py-3 text-sm font-semibold text-[#2b1c14] transition hover:bg-[#e2bf8c] sm:w-auto"
           >
             View Impact
           </Link>
 
           <Link
             href="/#vision"
-            className="inline-flex w-full items-center justify-center rounded-full border border-[#d4af78]/50 px-5 py-3 text-sm font-semibold text-[#f0cf95] transition hover:bg-white/5 sm:w-auto"
+            className="flex 1inline-flex w-full items-center justify-center rounded-full border border-[#d4af78]/50 px-5 py-3 text-sm font-semibold text-[#f0cf95] transition hover:bg-white/5 sm:w-auto"
           >
             Mandate & Vision
           </Link>
@@ -555,16 +556,16 @@ export default function AboutPage() {
             <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
               <Link
                 href="/impact"
-                className="inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#2f1d14]"
+                className="flex 1 items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#2f1d14]"
               >
                 Explore Impact
               </Link>
 
               <Link
                 href="/leadership-in-action"
-                className="inline-flex items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-center text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3]"
+                className="flex 1 items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-center text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3]"
               >
-                Leadership in Action
+                Gallery
               </Link>
             </div>
           </div>

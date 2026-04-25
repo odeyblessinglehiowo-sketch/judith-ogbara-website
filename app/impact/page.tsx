@@ -16,6 +16,7 @@ const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about" },
   { label: "Impact", href: "/impact" },
+  { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
   { label: "Leadership in Action", href: "/leadership-in-action" },
   { label: "Contact", href: "/contact" },
@@ -355,7 +356,7 @@ export default function ImpactPage() {
               href="/leadership-in-action"
               className="inline-flex items-center justify-center rounded-full bg-[#d4af78] px-4 py-3 text-center text-sm font-semibold text-[#2a1a12] transition hover:bg-[#e0bd89]"
             >
-              In Action
+              Gallery
             </Link>
 
             <Link
@@ -399,7 +400,7 @@ export default function ImpactPage() {
               href="/leadership-in-action"
               className="inline-flex items-center justify-center rounded-full bg-[#d4af78] px-4 py-3 text-center text-sm font-semibold text-[#2a1a12] transition hover:bg-[#e0bd89]"
             >
-              Leadership in Action
+              Gallery
             </Link>
 
             <Link
