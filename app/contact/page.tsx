@@ -21,6 +21,7 @@ const navItems = [
   { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
   { label: "Leadership in Action", href: "/leadership-in-action" },
+  { label: "News & Updates", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -137,7 +138,7 @@ export default function ContactPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.32em] text-[#9a7449]">
                 Menu
               </p>
-              <p className="mt-1 text-sm text-[#6d5746]">Judith Ogbara</p>
+              <p className="mt-1 text-sm text-[#6d5746]">Hon. Dr. Judith Ogbara</p>
             </div>
 
             <button

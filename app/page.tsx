@@ -23,6 +23,7 @@ const navItems = [
   { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
   { label: "Leadership in Action", href: "/leadership-in-action" },
+  { label: "News & Updates", href: "/news" },
   { label: "Contact", href: "/contact" },
 ];
 export default function HomePage() {
