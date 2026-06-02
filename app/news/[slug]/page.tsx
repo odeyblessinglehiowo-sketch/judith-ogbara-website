@@ -256,7 +256,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
           {/* IMAGE GRID */}
           {galleryImages.length > 0 && (
-            <section className="mt-10">
+            <section className="mt-9">
               <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
                 {galleryImages.map((image, index) => (
                   <figure
