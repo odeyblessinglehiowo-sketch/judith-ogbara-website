@@ -496,7 +496,7 @@ export const newsItems: NewsItem[] = [
     date: "December 6, 2025",
     byline: "By G4EP Tech Department",
     intro:
-      "The Eket Culture Heritage and Christmas Village brought together cultural pride, community spirit, and traditional expression in a colourful celebration of the Ekid people’s identity.",
+      "The Eket Culture Heritage and Christmas Village brought together cultural pride, community spirit, and traditional expression in a colourful celebration of the Eket people’s identity.",
     image: "/images/news/eket-culture-1.jpg",
     body: [
       "The Eket Culture Heritage and Christmas Village was a colourful celebration of tradition, unity, and identity as Hon. Dr. Judith Mayen Etuk was honoured to attend an event that proudly showcased the rich cultural heritage, customs, and local delicacies of the Ekid people.",
@@ -532,4 +532,42 @@ export const newsItems: NewsItem[] = [
       caption: "From the G4EP Media Team",
     },
   },
+  {
+  slug: "judith-ogbara-shares-school-bags-and-learning-materials-to-students-in-eket",
+  title: "Hon. Dr. Judith Ogbara Shares School Bags and Learning Materials to Students in Eket",
+  date: "October 2025",
+  byline: "By G4EP Tech Department",
+  intro:
+    "Hon. Dr. Judith Mayen Ogbara continued her commitment to education and child support by distributing school bags and learning materials to students in Eket Local Government Area, Akwa Ibom State.",
+  image: "/images/news/learning-materials.jpg",
+  body: [
+    "Hon. Dr. Judith Mayen Ogbara once again demonstrated her commitment to education and community support by sharing school bags and learning materials with students in Eket Local Government Area, Akwa Ibom State. The gesture was warmly received by children, parents, and community members who gathered to witness a simple but meaningful act of support aimed at easing the burden on families and encouraging young learners to stay focused on their studies.",
+    "The initiative reflected a strong belief that every child deserves a fair start and that access to basic school supplies should never stand in the way of learning. By providing essential educational materials, the outreach helped reinforce confidence in the students and reminded them that their education matters, their future matters, and their dreams are worth investing in.",
+    "The atmosphere at the event was filled with joy, gratitude, and encouragement as students proudly held up their new school bags and learning materials. For many families, the support came at just the right time and served as a practical reminder that small acts of kindness can make a real difference in the lives of children who are preparing for school and building the foundation for a brighter future.",
+    "Beyond the distribution itself, the moment also carried a deeper message about the importance of investing in children and supporting education at the grassroots level. Dr. Ogbara’s intervention highlighted the need for continued attention to the needs of students in local communities, especially those whose families may be facing financial pressure as they prepare for a new school session.",
+    "Through initiatives like this, she continues to show that leadership is not only about policy and position, but also about presence, compassion, and practical service. Her support for students in Eket stands as another example of her ongoing commitment to creating opportunities, encouraging learning, and strengthening the future of the next generation."
+  ],
+  gallery: [
+    {
+      src: "/images/news/action-1.jpg",
+      alt: "Judith Ogbara sharing school bags and learning materials with students in Eket",
+      caption: "From the G4EP Media Team",
+    },
+    {
+      src: "/images/news/learning-materials.jpg",
+      alt: "Students receiving learning materials during the outreach",
+      caption: "From the G4EP Media Team",
+    },
+    {
+      src: "/images/news/10(1).jpeg",
+      alt: "Group photo from the school support outreach",
+      caption: "From the G4EP Media Team",
+    },
+    {
+      src: "/images/news/11(1).jpeg",
+      alt: "Another moment from the school bags and learning materials distribution",
+      caption: "From the G4EP Media Team",
+    }
+  ]
+}
 ];

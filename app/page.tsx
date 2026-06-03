@@ -279,10 +279,10 @@ export default function HomePage() {
       </div>
 
       {/* Heading */}
-      <h1 className="text-[2.6rem] font-bold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
-        Hon. Dr. Judith
+      <h1 className="text-[2.6rem] font-bold leading-[1.05] text-white sm:text-6xl lg:text-6xl">
+        Hon. Dr. Judith Mayen
         <span className="block text-[#f0d1a0]">
-          Mayen Ogbara
+          Etuk Ogbara
         </span>
       </h1>
 
