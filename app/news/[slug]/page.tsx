@@ -1,8 +1,10 @@
+
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { newsItems } from "@/data/news";
+import NewsArticleMedia from "@/components/NewsArticleMedia";
 
 type PageProps = {
   params: Promise<{
@@ -44,7 +46,12 @@ type FlexibleArticle = {
   blocks?: Array<
     | { type: "paragraph"; text: string }
     | { type: "image"; src: string; alt: string; caption?: string }
-    | { type: "video"; src: string; poster?: string; caption?: string }
+    | {
+        type: "video";
+        src: string;
+        poster?: string;
+        caption?: string;
+      }
   >;
 };
 
@@ -54,9 +61,14 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const article = newsItems.find((item) => item.slug === slug) as FlexibleArticle | undefined;
+
+  const article = newsItems.find(
+    (item) => item.slug === slug,
+  ) as FlexibleArticle | undefined;
 
   if (!article) {
     return { title: "News Story" };
@@ -70,7 +82,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function NewsArticlePage({ params }: PageProps) {
   const { slug } = await params;
-  const article = newsItems.find((item) => item.slug === slug) as FlexibleArticle | undefined;
+
+  const article = newsItems.find(
+    (item) => item.slug === slug,
+  ) as FlexibleArticle | undefined;
 
   if (!article) {
     notFound();
@@ -105,7 +120,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
   return (
     <main className="min-h-screen bg-[#fcfaf7] text-[#2b1c14]">
-      {/* HEADER - same as News page */}
+      {/* HEADER */}
       <header className="sticky top-0 z-50 w-full px-0 pt-0">
         <div className="border-b border-white/10 bg-[#160f0c]/90 px-4 py-3 backdrop-blur-xl sm:px-6 lg:px-10">
           <div className="mx-auto flex max-w-7xl items-center justify-between">
@@ -144,7 +159,10 @@ export default async function NewsArticlePage({ params }: PageProps) {
                         : "text-white/80 hover:text-white"
                     }`}
                   >
-                    <span className="relative z-10">{item.label}</span>
+                    <span className="relative z-10">
+                      {item.label}
+                    </span>
+
                     <span
                       className={`absolute inset-x-4 bottom-1 h-px origin-left bg-gradient-to-r from-[#b7864a] to-[#f2d4a8] transition-transform duration-300 ${
                         isActive
@@ -164,6 +182,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
               Get in Touch
             </Link>
 
+            {/* MOBILE MENU */}
             <details className="relative md:hidden">
               <summary className="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded-xl border border-white/20 bg-white/[0.05] text-white transition hover:bg-white/[0.08]">
                 <div className="flex h-4 w-5 flex-col items-center justify-between">
@@ -178,7 +197,9 @@ export default async function NewsArticlePage({ params }: PageProps) {
                   <p className="text-sm font-semibold uppercase tracking-[0.26em] text-[#9a7449]">
                     Menu
                   </p>
-                  <p className="mt-1 text-sm text-[#6d5746]">Judith Ogbara</p>
+                  <p className="mt-1 text-sm text-[#6d5746]">
+                    Judith Ogbara
+                  </p>
                 </div>
 
                 <nav className="px-5 py-4">
@@ -211,7 +232,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
         </div>
       </header>
 
-      {/* HERO - same news/update style */}
+      {/* HERO */}
       <section
         id="home"
         className="scroll-mt-28 bg-[#2b1c14] px-5 py-14 sm:px-6 lg:px-10 lg:py-16"
@@ -220,9 +241,11 @@ export default async function NewsArticlePage({ params }: PageProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.28em] text-[#d4af78]">
             News & Updates
           </p>
+
           <h1 className="mt-4 text-4xl font-bold leading-tight text-white sm:text-5xl">
             Latest stories, milestones, and public moments.
           </h1>
+
           <p className="mx-auto mt-5 max-w-3xl text-sm leading-7 text-[#eadfce]/82 sm:text-base sm:leading-8">
             Stay informed on Hon. Dr. Judith Mayen Ogbara’s recent activities,
             recognitions, community engagements, and leadership updates.
@@ -254,35 +277,11 @@ export default async function NewsArticlePage({ params }: PageProps) {
             </p>
           </div>
 
-          {/* IMAGE GRID */}
-          {galleryImages.length > 0 && (
-            <section className="mt-9">
-              <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-                {galleryImages.map((image, index) => (
-                  <figure
-                    key={`${image.src}-${index}`}
-                    className="overflow-hidden bg-white shadow-sm"
-                  >
-                    <div className="relative aspect-[4/4] bg-[#f3ede4]">
-                      <Image
-                        src={image.src}
-                        alt={image.alt}
-                        fill
-                        sizes="(min-width: 1024px) 25vw, 50vw"
-                        className="object-cover"
-                      />
-                    </div>
-
-                    {image.caption ? (
-                      <figcaption className="px-4 py-3 text-sm text-[#8a653f]">
-                        {image.caption}
-                      </figcaption>
-                    ) : null}
-                  </figure>
-                ))}
-              </div>
-            </section>
-          )}
+          {/* IMAGES + VIDEO IN ONE GALLERY */}
+          <NewsArticleMedia
+            images={galleryImages}
+            video={video}
+          />
 
           {/* MAIN STORY */}
           <section className="mt-10">
@@ -297,36 +296,6 @@ export default async function NewsArticlePage({ params }: PageProps) {
             </div>
           </section>
 
-          {/* VIDEO AT THE END */}
-          {video ? (
-            <section className="mt-10">
-              <div className="overflow-hidden bg-white shadow-sm">
-                <div className="p-6 sm:p-8 lg:p-10">
-                  <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449]">
-                    Video
-                  </p>
-
-                  <div className="mt-5 space-y-3">
-                    <div className="relative aspect-video overflow-hidden rounded-[0.75rem]">
-  <video
-    controls
-    playsInline
-    poster={"poster" in video ? video.poster : undefined}
-    className="h-full w-full object-cover"
-  >
-    <source src={"src" in video ? video.src : ""} type="video/mp4" />
-  </video>
-</div>
-
-                    {"caption" in video && video.caption ? (
-                      <p className="text-sm text-[#8a653f]">{video.caption}</p>
-                    ) : null}
-                  </div>
-                </div>
-              </div>
-            </section>
-          ) : null}
-
           {/* SUGGESTED STORIES */}
           <section className="mt-12">
             <div className="flex items-end justify-between gap-4">
@@ -334,6 +303,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
                 <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449]">
                   Suggested Stories
                 </p>
+
                 <h3 className="mt-3 text-2xl font-bold text-[#2b1c14]">
                   More updates to explore
                 </h3>
@@ -342,7 +312,10 @@ export default async function NewsArticlePage({ params }: PageProps) {
 
             <div className="mt-6 grid grid-cols-1 gap-4 lg:grid-cols-4">
               {suggestedStories.map((item) => (
-                <article key={item.slug} className="overflow-hidden bg-white shadow-sm">
+                <article
+                  key={item.slug}
+                  className="overflow-hidden bg-white shadow-sm"
+                >
                   <Link href={`/news/${item.slug}`} className="block">
                     <div className="relative aspect-[4/4] overflow-hidden bg-[#f3ede4]">
                       <Image
@@ -359,7 +332,11 @@ export default async function NewsArticlePage({ params }: PageProps) {
                     <h4 className="text-sm font-bold leading-snug text-[#2b1c14] sm:text-base">
                       {item.title}
                     </h4>
-                    <p className="mt-2 text-xs text-[#8a653f]">{item.date}</p>
+
+                    <p className="mt-2 text-xs text-[#8a653f]">
+                      {item.date}
+                    </p>
+
                     <Link
                       href={`/news/${item.slug}`}
                       className="mt-3 inline-flex text-sm font-semibold text-[#8a653f] hover:text-[#4a2f21]"

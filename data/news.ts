@@ -21,6 +21,81 @@ export type NewsItem = {
 };
 
 export const newsItems: NewsItem[] = [
+
+{
+  slug: "judith-ogbara-commemorates-international-day-of-democracy-2026",
+
+  title:
+    "Judith Ogbara Commemorates International Day of Democracy with a Call for Participation, Inclusion, and Ownership",
+
+  date: "September 15, 2026",
+
+  byline: "By G4EP Tech Department",
+
+  intro:
+    "Hon. Dr. Judith Mayen Etuk Ogbara commemorated the International Day of Democracy 2026 with a message encouraging citizens to embrace meaningful participation, inclusive dialogue, and shared ownership in shaping the future of their communities and nation.",
+
+  image: "/images/news/democracy-1.jpg",
+
+  body: [
+    "Hon. Dr. Judith Mayen Etuk Ogbara has called for greater citizen participation, inclusion, and shared responsibility in the continuous effort to build a stronger and more responsive society. In commemoration of the International Day of Democracy 2026, she reflected on the importance of ensuring that every voice has the opportunity to be heard and that every citizen has a meaningful stake in shaping the collective future.",
+
+    "In her message, Dr. Ogbara emphasized that democracy extends beyond the conduct of elections. While elections remain an important part of democratic governance, the strength of a democracy is also reflected in how people participate in public life, how their concerns are received, and how much opportunity they have to contribute to the decisions that affect their everyday lives. For her, a society becomes stronger when citizens are not merely observers of governance but active participants in its development.",
+
+    "The 2026 International Day of Democracy theme, “Raising Hands and Voices, Fostering Agency and Ownership Through Deliberative Democracy,” provided an opportunity to reflect on the value of meaningful dialogue and inclusive decision-making. The theme highlights the importance of creating spaces where individuals and communities can express their views, engage with one another, and take ownership of the issues that shape their lives.",
+
+    "Dr. Ogbara noted that every raised hand represents a willingness to participate, while every voice represents an opportunity to influence the conversations and decisions that define a community. She stressed the need for a democratic culture where people are encouraged to speak, listened to with respect, and given the opportunity to contribute meaningfully to the development of society.",
+
+    "She further highlighted the importance of ensuring that young people, women, and citizens from all backgrounds are included in conversations about the future. A more inclusive society, she noted, requires deliberate efforts to create opportunities for participation and to ensure that people are not excluded from decisions because of their background, circumstances, or position in society.",
+
+    "For Dr. Ogbara, meaningful participation also comes with responsibility. Citizens have a role to play in asking questions, engaging constructively, respecting differing perspectives, and contributing to the development of their communities. Democratic progress requires more than the expression of opinions; it requires a willingness to listen, engage, and work together toward solutions that serve the common good.",
+
+    "As part of her message, she encouraged citizens to choose dialogue over silence, participation over indifference, inclusion over exclusion, and responsibility over apathy. She reaffirmed the importance of building a society where people feel seen, heard, and valued, and where their contributions can help shape the decisions that affect their lives and the future of the nation.",
+
+    "The commemoration also served as a reminder of the importance of fostering a culture of active citizenship, particularly among young Nigerians. By encouraging people to understand their role in democratic processes and to participate in meaningful conversations, communities can strengthen trust, promote accountability, and create a stronger foundation for inclusive development.",
+
+    "Dr. Ogbara concluded her message with a call for citizens to take ownership of the democracy they desire. She encouraged everyone to raise their hands, raise their voices, and embrace their responsibility in shaping a society built on participation, respect, inclusion, and shared purpose.",
+
+    "As the world marks the International Day of Democracy 2026, the message remains clear: every voice matters, every contribution counts, and a stronger democracy is built when citizens have the opportunity and the willingness to participate."
+  ],
+
+  gallery: [
+    {
+      src: "/images/news/democracy-1.jpg",
+
+      alt:
+        "Dr. Judith Mayen Etuk Ogbara commemorating International Day of Democracy 2026",
+
+      caption: "From the G4EP Media Team",
+    },
+
+    {
+      src: "/images/news/democracy-2.jpg",
+
+      alt:
+        "International Day of Democracy 2026 message by Dr. Judith Mayen Etuk Ogbara",
+
+      caption: "From the G4EP Media Team",
+    },
+
+    {
+      src: "/images/news/democracy-3.jpg",
+
+      alt:
+        "Dr. Judith Mayen Etuk Ogbara shares a message on democratic participation and inclusion",
+
+      caption: "From the G4EP Media Team",
+    },
+  ],
+
+  video: {
+    src: "/images/news/democracy-2026.mp4",
+
+    poster: "/images/news/democracy-1.jpg",
+
+    caption: "International Day of Democracy 2026. From the G4EP Media Team",
+  },
+},
   {
     slug: "new-month-message-june-2026",
     title: "Judith Ogbara Welcomes June with a Message of Hope, Gratitude, and Renewed Commitment",
@@ -570,4 +645,5 @@ export const newsItems: NewsItem[] = [
     }
   ]
 }
+
 ];
