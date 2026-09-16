@@ -82,7 +82,7 @@ export const newsItems: NewsItem[] = [
       src: "/images/news/democracy-3.jpg",
 
       alt:
-        "Dr. Judith Mayen Etuk Ogbara shares a message on democratic participation and inclusion",
+        "Dr. Judith Mayen Etuk Ogbara shares a message on democratic participation & inclusion",
 
       caption: "From the G4EP Media Team",
     },
