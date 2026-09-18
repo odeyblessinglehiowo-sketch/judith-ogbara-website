@@ -17,6 +17,16 @@ const navItems = [
   { label: "Impact", href: "/impact" },
   { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
+  {
+    label: "G4EP",
+    href: "https://www.geeeep.com",
+    external: true,
+  },
+  {
+    label: "AAE Foundation",
+    href: "https://www.aaefoundation.org.ng",
+    external: true,
+  },
   { label: "Leadership in Action", href: "/leadership-in-action" },
   { label: "News & Updates", href: "/news" },
   { label: "Contact", href: "/contact" },
@@ -137,26 +147,27 @@ const [activeImage, setActiveImage] = useState<string | null>(null);
           const isActive = item.href === "/awards"; // 👈 important
 
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`group relative rounded-full px-4 py-2.5 text-sm font-medium transition duration-300 ${
-                isActive
-                  ? "bg-gradient-to-r from-[#d4af78]/25 to-[#f2d4a8]/20 text-[#f6e2c5] shadow-[0_4px_18px_rgba(212,175,120,0.2)]"
-                  : "text-[#f1e7da]/75 hover:text-white"
-              }`}
-            >
-              <span className="relative z-10">{item.label}</span>
+             <Link
+        key={item.href}
+        href={item.href}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noopener noreferrer" : undefined}
+        className={`group relative rounded-full px-2 py-2 text-sm font-bold transition ${
+          isActive
+            ? "bg-[#d4af78]/15 text-[#f3d7aa]"
+            : "text-white/80 hover:text-white"
+        }`}
+      >
+        <span className="relative z-10">{item.label}</span>
 
-              {/* underline glow */}
-              <span
-                className={`absolute inset-x-4 bottom-1 h-px origin-left bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent transition-transform duration-300 ${
-                  isActive
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
-            </Link>
+        <span
+          className={`absolute inset-x-3 bottom-1 h-px origin-left bg-gradient-to-r from-[#b7864a] to-[#f2d4a8] transition-transform duration-300 ${
+            isActive
+              ? "scale-x-100"
+              : "scale-x-0 group-hover:scale-x-100"
+          }`}
+        />
+      </Link>
           );
         })}
       </nav>
@@ -188,22 +199,24 @@ const [activeImage, setActiveImage] = useState<string | null>(null);
 {mobileMenuOpen && (
   <div className="fixed inset-0 z-[100] bg-black/60 backdrop-blur-sm md:hidden">
 
-    <div className="absolute right-0 top-0 h-full w-[75%] bg-[#1a120d] p-6 shadow-xl">
+    <div className="absolute right-0 top-0 h-full w-[75%] bg-[#ffffff] p-6 shadow-xl">
 
       {/* CLOSE BUTTON */}
       <button
         onClick={() => setMobileMenuOpen(false)}
-        className="mb-8 text-white text-2xl"
+        className="mb-8 text-#1a120de text-2xl"
       >
         ×
       </button>
 
       {/* NAV ITEMS */}
-      <nav className="flex flex-col gap-6 text-[#f1e7da]">
+      <nav className="flex flex-col gap-6 text-[#1a120d]">
         {navItems.map((item) => (
           <Link
             key={item.href}
-            href={item.href}
+        href={item.href}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noopener noreferrer" : undefined}
             onClick={() => setMobileMenuOpen(false)}
             className="text-lg font-medium hover:text-white"
           >
@@ -353,109 +366,176 @@ const [activeImage, setActiveImage] = useState<string | null>(null);
   </div>
 </section>
     {/* Footer */}
-     <footer className="bg-[#1f130d] px-5 py-14 text-[#e8dccb] sm:px-6 lg:px-10 lg:py-16">
-       <div className="mx-auto max-w-7xl">
-         <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr]">
-           <div>
-             <div className="flex items-center gap-3">
-               <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
-                 <Image
-                   src="/images/judith-logo2.png"
-                   alt="Judith Ogbara logo"
-                   fill
-                   className="object-contain p-0"
-                 />
-               </div>
-     
-               <div>
-                 <p className="text-sm font-semibold tracking-wide text-white">
-                   Judith Ogbara
-                 </p>
-                 <p className="text-xs text-[#cbb89f]">
-                   Official Profile
-                 </p>
-               </div>
-             </div>
-     
-             <p className="mt-5 max-w-sm text-sm leading-7 text-[#cbb89f]">
-               A public servant committed to advancing leadership, education,
-               empowerment, and sustainable community development through service,
-               integrity, and measurable impact.
-             </p>
-           </div>
-     
-           <div>
-             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
-               Navigation
-             </p>
-     
-             <ul className="mt-5 space-y-3 text-sm text-[#cbb89f]">
-               <li><a href="#home" className="transition hover:text-white">Home</a></li>
-               <li><a href="#about" className="transition hover:text-white">About</a></li>
-               <li><a href="#impact" className="transition hover:text-white">Impact</a></li>
-               <li><a href="#vision" className="transition hover:text-white">Mandate & Vision</a></li>
-               <li><a href="#gallery" className="transition hover:text-white">Leadership in Action</a></li>
-               <li><a href="#contact" className="transition hover:text-white">Contact</a></li>
-             </ul>
-           </div>
-     
-           <div>
-             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
-               Contact
-             </p>
-     
-             <div className="mt-5 space-y-4 text-sm text-[#cbb89f]">
-               <p>info@judithogbara.com</p>
-               <p>+234 812 497 2568 | +234 803 304 8469</p>
-               <p>85 Eket Etinan Road, Okon Eket, Akwa Ibom State</p>
-             </div>
-     
-             <div className="mt-6 flex gap-3">
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Facebook"
-               >
-                 <FaFacebookF className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Instagram"
-               >
-                 <FaInstagram className="text-sm" />
-               </a>
-           
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Linkedin"
-               >
-                 <FaLinkedin className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="X"
-               >
-                 <FaXTwitter className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Whatsapp"
-               >
-                 <FaWhatsapp className="text-sm" />
-               </a>
-             </div>
-           </div>
-         </div>
-     
-         <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-[#a89377]">
-           © {new Date().getFullYear()} Judith Ogbara. All rights reserved.
-         </div>
-       </div>
-     </footer>
+    <footer className="bg-[#1f130d] px-5 py-14 text-[#e8dccb] sm:px-6 lg:px-10 lg:py-16">
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr]">
+      
+      {/* Brand */}
+      <div>
+        <div className="flex items-center gap-3">
+          <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
+            <Image
+              src="/images/judith-logo2.png"
+              alt="Judith Ogbara logo"
+              fill
+              className="object-contain p-0"
+            />
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold tracking-wide text-white">
+              Judith Ogbara
+            </p>
+
+            <p className="text-xs text-[#cbb89f]">
+              Official Profile
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-5 max-w-sm text-sm leading-7 text-[#cbb89f]">
+          A public servant committed to advancing leadership, education,
+          empowerment, and sustainable community development through service,
+          integrity, and measurable impact.
+        </p>
+      </div>
+
+      {/* Navigation */}
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
+          Navigation
+        </p>
+
+        <ul className="mt-5 space-y-3 text-sm text-[#cbb89f]">
+          <li>
+            <a
+              href="#home"
+              className="transition hover:text-white"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#about"
+              className="transition hover:text-white"
+            >
+              About
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#impact"
+              className="transition hover:text-white"
+            >
+              Impact
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#vision"
+              className="transition hover:text-white"
+            >
+              Mandate & Vision
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#gallery"
+              className="transition hover:text-white"
+            >
+              Leadership in Action
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              className="transition hover:text-white"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
+          Contact
+        </p>
+
+        <div className="mt-5 space-y-4 text-sm text-[#cbb89f]">
+          <p>info@judithogbara.com</p>
+
+          <p>
+            +234 812 497 2568 | +234 803 304 8469
+          </p>
+
+          <p>
+            85 Eket Etinan Road, Okon Eket, Akwa Ibom State
+          </p>
+        </div>
+
+        {/* Social Media */}
+        <div className="mt-6 flex gap-3">
+          {/* Facebook */}
+          <a
+            href="https://www.facebook.com/judith.ogbara.7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="Facebook"
+          >
+            <FaFacebookF className="text-sm" />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/judithogbara/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="text-sm" />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/judith-ogbara-b3352856/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin className="text-sm" />
+          </a>
+
+          {/* X */}
+          <a
+            href="https://x.com/JudithOgbara"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="X"
+          >
+            <FaXTwitter className="text-sm" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-[#a89377]">
+      © {new Date().getFullYear()} Judith Ogbara. All rights reserved.
+    </div>
+  </div>
+</footer>
      {activeImage && (
   <div
     className="fixed inset-0 z-[100] flex items-center justify-center bg-black/60 backdrop-blur-sm px-4"

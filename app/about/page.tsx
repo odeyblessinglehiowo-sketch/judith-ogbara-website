@@ -17,6 +17,16 @@ const navItems = [
   { label: "Impact", href: "/impact" },
   { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
+  {
+    label: "G4EP",
+    href: "https://www.geeeep.com",
+    external: true,
+  },
+  {
+    label: "AAE Foundation",
+    href: "https://www.aaefoundation.org.ng",
+    external: true,
+  },
   { label: "Leadership in Action", href: "/leadership-in-action" },
   { label: "News & Updates", href: "/news" },
   { label: "Contact", href: "/contact" },
@@ -68,24 +78,27 @@ export default function AboutPage() {
           const isActive = item.href === "/about";
 
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`group relative rounded-full px-4 py-2.5 text-sm font-medium transition duration-300 ${
-                isActive
-                  ? "bg-[#d4af78]/16 text-[#f3d19f]"
-                  : "text-[#f7efe4]/82 hover:text-white"
-              }`}
-            >
-              <span className="relative z-10">{item.label}</span>
-              <span
-                className={`absolute inset-x-4 bottom-1 h-px origin-left bg-gradient-to-r from-[#d4af78] to-[#f2d4a8] transition-transform duration-300 ${
-                  isActive
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
-            </Link>
+        <Link
+        key={item.href}
+        href={item.href}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noopener noreferrer" : undefined}
+        className={`group relative rounded-full px-2 py-2 text-sm font-bold transition ${
+          isActive
+            ? "bg-[#d4af78]/15 text-[#f3d7aa]"
+            : "text-white/80 hover:text-white"
+        }`}
+      >
+        <span className="relative z-10">{item.label}</span>
+
+        <span
+          className={`absolute inset-x-3 bottom-1 h-px origin-left bg-gradient-to-r from-[#b7864a] to-[#f2d4a8] transition-transform duration-300 ${
+            isActive
+              ? "scale-x-100"
+              : "scale-x-0 group-hover:scale-x-100"
+          }`}
+        />
+      </Link>
           );
         })}
       </nav>
@@ -158,7 +171,9 @@ export default function AboutPage() {
           {navItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+        href={item.href}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noopener noreferrer" : undefined}
               onClick={() => setMobileMenuOpen(false)}
               className={`py-4 text-[1.05rem] font-semibold ${
                 item.href === "/about" ? "text-[#8b6438]" : "text-[#1f1f1f]"
@@ -182,7 +197,7 @@ export default function AboutPage() {
 </header>
 
       {/* Page Hero */}
-     <section className="relative overflow-hidden bg-[#2b1c14] px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-18">
+     <section className="relative overflow-hidden bg-[#2b1c14] px-5 py-10 sm:px-6 sm:py-14 lg:px-10 lg:py-18">
   <div className="pointer-events-none absolute inset-0">
     <div className="absolute left-[-100px] top-10 h-64 w-64 rounded-full bg-[#b7864a]/20 blur-3xl" />
     <div className="absolute right-[-80px] top-1/3 h-72 w-72 rounded-full bg-[#f0cf95]/10 blur-3xl" />
@@ -200,22 +215,22 @@ export default function AboutPage() {
         </p>
 
         {/* Heading */}
-        <h1 className="mt-3 text-4xl font-bold leading-[1.05] text-white sm:text-5xl lg:text-6xl">
-          A life shaped by service, discipline, and a steady commitment to people.
+        <h1 className="mt-3 text-3xl font-bold leading-[1.09] text-white sm:text-4xl lg:text-5xl">
+          A life Shaped by Service, Discipline, and a Steady Commitment to People.
         </h1>
 
         {/* Line */}
-        <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent lg:mx-0" />
+        <div className="mx-auto mt-2 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent lg:mx-0" />
 
         {/* Paragraph */}
-        <p className="mt-5 mx-auto max-w-2xl text-[15px] leading-7 text-[#eadfce]/85 sm:text-lg sm:leading-8 lg:mx-0">
+        <p className="mt-3 mx-auto max-w-2xl text-[15px] leading-7 text-[#eadfce]/85 sm:text-lg sm:leading-8 lg:mx-0">
           Hon. Dr. Judith Mayen Ogbara is a public servant, philanthropist,
           and governance advocate whose journey reflects compassion,
           structure, and a deep sense of responsibility to people and community.
         </p>
 
         {/* Buttons */}
-        <div className="mt-6 flex gap-3 w-full max-w-md justify-center lg:justify-start">
+        <div className="mt-6 flex flex-col gap-3 w-full max-w-md justify-center lg:justify-start sm:flex-row">
 
           <Link
             href="/impact"
@@ -235,7 +250,7 @@ export default function AboutPage() {
       </div>
 
             {/* Hero image hidden on mobile for a tighter first view */}
-           <div className="relative mt-8 md:mt-0">
+           <div className="relative mt-4 md:mt-0">
   <div className="absolute -left-3 -top-3 h-full w-full rounded-[2rem] border border-[#dcc3a0]/30" />
 
   <div className="relative overflow-hidden rounded-[2rem] bg-[#3a2418] p-2 sm:p-3 shadow-[0_20px_60px_rgba(0,0,0,0.4)]">
@@ -258,22 +273,22 @@ export default function AboutPage() {
       </section>
 
       {/* Biography */}
-      <section className="bg-white px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+      <section className="bg-white px-5 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-15">
         <div className="mx-auto max-w-7xl">
           <div className="grid items-start gap-8 lg:grid-cols-[0.74fr_1.06fr] lg:gap-12">
             {/* Write-up first on mobile, second on desktop */}
             <div className="order-1 lg:order-2">
-              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
+              <p className="text-sm text-center font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
                 Biography
               </p>
 
-              <h2 className="mt-3 text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
-                A public story built on experience, service, and steady human impact.
+              <h2 className="mt-3 text-center text-2xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
+                A public Story Built on Experience, Service, and Steady Human Impact.
               </h2>
 
-              <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent" />
+              <div className="mt-2 mx-auto h-1 w-20 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent" />
 
-              <div className="mt-6 space-y-5 text-[15px] leading-8 text-[#6d5746] sm:text-[16px]">
+              <div className="mt-6 space-y-5 text-[15px] leading-7 text-[#6d5746] sm:text-[16px]">
                 <p>
                   Judith’s professional journey started in the Nigerian oil and gas
                   industry, where she developed a reputation for discipline,
@@ -308,7 +323,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="mt-7 grid grid-cols-2 gap-3">
+              <div className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
                 <Link
                   href="/impact"
                   className="inline-flex items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#2f1d14]"
@@ -405,16 +420,16 @@ export default function AboutPage() {
       </section>
 
       {/* Leadership philosophy */}
-      <section className="bg-white px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+      <section className="bg-white px-2 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-10">
         <div className="mx-auto max-w-7xl">
           <div className="rounded-[2rem] bg-[linear-gradient(135deg,#4a2f21_0%,#2f1d14_100%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(43,28,20,0.18)] sm:px-8 sm:py-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] sm:tracking-[0.3em]">
+            <p className="text-sm text-center font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] sm:tracking-[0.3em]">
               Leadership Philosophy
             </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 className="mt-2 mx-auto text-center max-w-4xl text-2xl font-bold leading-tight sm:text-4xl">
               For her, leadership has always been less about attention and more about responsibility.
             </h2>
-            <p className="mt-5 max-w-4xl text-sm leading-7 text-[#eadfce]/85 sm:text-base sm:leading-8">
+            <p className="mt-2 mx-auto text-center max-w-3xl text-sm leading-6 text-[#eadfce]/85 sm:text-base sm:leading-8">
               That is why her work often feels personal to people. Whether she is
               supporting students, speaking up for safer learning spaces, mentoring
               young people, or building partnerships that can help communities,
@@ -426,24 +441,24 @@ export default function AboutPage() {
       </section>
 
       {/* Service & public life */}
-      <section className="bg-[#fcfaf7] px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+      <section className="bg-[#fcfaf7] px-5 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-15">
         <div className="mx-auto max-w-7xl">
           <div className="mx-auto max-w-3xl text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
               Service & Public Life
             </p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
+            <h2 className="mt-2 text-2xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
               The work people know her for is grounded in care, not performance.
             </h2>
-            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-[#b7864a]" />
+            <div className="mx-auto mt-2 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-[#b7864a]" />
           </div>
 
-          <div className="mt-10 grid gap-4 md:grid-cols-2">
+          <div className="mt-4 grid gap-4 md:grid-cols-4">
             <div className="rounded-[1.75rem] border border-[#eadac4] bg-white p-6 shadow-sm">
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
                 Education Support
               </p>
-              <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+              <p className="mt-2 text-sm leading-7 text-[#6d5746] sm:text-base">
                 She has supported the education of hundreds of female students
                 through WAEC and JAMB sponsorship, learning resources, and wider
                 opportunities that help young people stay hopeful about their future.
@@ -454,7 +469,7 @@ export default function AboutPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
                 Women & Youth Empowerment
               </p>
-              <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+              <p className="mt-2 text-sm leading-6 text-[#6d5746] sm:text-base">
                 From business support for women to mentorship and skills-focused
                 engagement for young people, her work continues to be rooted in
                 helping others stand stronger on their own.
@@ -465,7 +480,7 @@ export default function AboutPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
                 Advocacy & Public Voice
               </p>
-              <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+              <p className="mt-2 text-sm leading-6 text-[#6d5746] sm:text-base">
                 Her leadership also shows in the issues she chooses to speak on,
                 especially around student welfare, safer learning environments,
                 and the dignity and protection of women and girls.
@@ -476,7 +491,7 @@ export default function AboutPage() {
               <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
                 Partnerships & Broader Reach
               </p>
-              <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+              <p className="mt-2 text-sm leading-6 text-[#6d5746] sm:text-base">
                 Through platforms like the AAE Foundation and wider strategic
                 collaborations, she continues to look for ways impact can reach
                 more people and last longer.
@@ -486,197 +501,213 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
-      <section className="bg-white px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
-              Core Values
-            </p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
-              Principles that continue to guide the work.
-            </h2>
-            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-[#b7864a]" />
-          </div>
-
-          <div className="mt-8 grid grid-cols-2 gap-4 xl:grid-cols-5">
-            <div className="rounded-2xl bg-[#fcfaf7] p-4 text-center shadow-sm sm:p-5">
-              <p className="text-base font-semibold text-[#8a653f]">Integrity</p>
-              <p className="mt-2 text-sm leading-7 text-[#6d5746]">
-                Doing the right thing with honesty and moral clarity.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-[#fcfaf7] p-4 text-center shadow-sm sm:p-5">
-              <p className="text-base font-semibold text-[#8a653f]">Service</p>
-              <p className="mt-2 text-sm leading-7 text-[#6d5746]">
-                Putting people and community before personal attention.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-[#fcfaf7] p-4 text-center shadow-sm sm:p-5">
-              <p className="text-base font-semibold text-[#8a653f]">Excellence</p>
-              <p className="mt-2 text-sm leading-7 text-[#6d5746]">
-                Working with discipline, care, and professional seriousness.
-              </p>
-            </div>
-
-            <div className="rounded-2xl bg-[#fcfaf7] p-4 text-center shadow-sm sm:p-5">
-              <p className="text-base font-semibold text-[#8a653f]">Compassion</p>
-              <p className="mt-2 text-sm leading-7 text-[#6d5746]">
-                Staying human, present, and genuinely concerned about others.
-              </p>
-            </div>
-
-            {/* Hidden on mobile to keep only 4 cards */}
-            <div className="hidden rounded-2xl bg-[#fcfaf7] p-4 text-center shadow-sm sm:block sm:p-5">
-              <p className="text-base font-semibold text-[#8a653f]">Innovation</p>
-              <p className="mt-2 text-sm leading-7 text-[#6d5746]">
-                Embracing fresh ideas that can create lasting progress.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
       {/* Closing CTA */}
-      <section className="bg-white px-5 py-12 sm:px-6 sm:py-14 lg:px-10 lg:py-16">
+      <section className="bg-white px-3 py-8 sm:px-6 sm:py-10 lg:px-10 lg:py-15">
         <div className="mx-auto max-w-7xl">
           <div className="rounded-[2rem] border border-[#eadac4] bg-[#fcfaf7] px-6 py-8 shadow-sm sm:px-8 sm:py-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
+            <p className="text-center text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
               Continue Exploring
             </p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
+            <h2 className="mx-auto text-center mt-2 max-w-5xl text-2xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
               Explore her impact, vision, and ongoing leadership story.
             </h2>
-            <p className="mt-5 max-w-3xl text-[15px] leading-8 text-[#6d5746] sm:text-lg">
+            <p className="text-center mx-auto mt-2 max-w-3xl text-[15px] leading-8 text-[#6d5746] sm:text-lg">
               Learn more about the initiatives, values, and measurable outcomes
               that continue to shape her public engagement and service journey.
             </p>
 
-            <div className="mt-7 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap">
-              <Link
-                href="/impact"
-                className="flex 1 items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#2f1d14]"
-              >
-                Explore Impact
-              </Link>
+            <div className="mx-auto mt-7 grid max-w-md grid-cols-1 justify-center gap-3 sm:flex sm:flex-wrap sm:grid-cols-2 sm:justify-center">
+  <Link
+    href="/impact"
+    className="flex-1 items-center justify-center rounded-full bg-[#4a2f21] px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-[#2f1d14]"
+  >
+    Explore Impact
+  </Link>
 
-              <Link
-                href="/leadership-in-action"
-                className="flex 1 items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-center text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3]"
-              >
-                Gallery
-              </Link>
-            </div>
+  <Link
+    href="/leadership-in-action"
+    className="flex-1 items-center justify-center rounded-full border border-[#caa77a] px-4 py-3 text-center text-sm font-semibold text-[#8a653f] transition hover:bg-[#f5ede3]"
+  >
+    Gallery
+  </Link>
+</div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
      <footer className="bg-[#1f130d] px-5 py-14 text-[#e8dccb] sm:px-6 lg:px-10 lg:py-16">
-       <div className="mx-auto max-w-7xl">
-         <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr]">
-           <div>
-             <div className="flex items-center gap-3">
-               <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
-                 <Image
-                   src="/images/judith-logo2.png"
-                   alt="Judith Ogbara logo"
-                   fill
-                   className="object-contain p-0"
-                 />
-               </div>
-     
-               <div>
-                 <p className="text-sm font-semibold tracking-wide text-white">
-                   Judith Ogbara
-                 </p>
-                 <p className="text-xs text-[#cbb89f]">
-                   Official Profile
-                 </p>
-               </div>
-             </div>
-     
-             <p className="mt-5 max-w-sm text-sm leading-7 text-[#cbb89f]">
-               A public servant committed to advancing leadership, education,
-               empowerment, and sustainable community development through service,
-               integrity, and measurable impact.
-             </p>
-           </div>
-     
-           <div>
-             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
-               Navigation
-             </p>
-     
-             <ul className="mt-5 space-y-3 text-sm text-[#cbb89f]">
-               <li><a href="#home" className="transition hover:text-white">Home</a></li>
-               <li><a href="#about" className="transition hover:text-white">About</a></li>
-               <li><a href="#impact" className="transition hover:text-white">Impact</a></li>
-               <li><a href="#vision" className="transition hover:text-white">Mandate & Vision</a></li>
-               <li><a href="#gallery" className="transition hover:text-white">Leadership in Action</a></li>
-               <li><a href="#contact" className="transition hover:text-white">Contact</a></li>
-             </ul>
-           </div>
-     
-           <div>
-             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
-               Contact
-             </p>
-     
-             <div className="mt-5 space-y-4 text-sm text-[#cbb89f]">
-               <p>info@judithogbara.com</p>
-               <p>+234 812 497 2568 | +234 803 304 8469</p>
-               <p>85 Eket Etinan Road, Okon Eket, Akwa Ibom State</p>
-             </div>
-     
-             <div className="mt-6 flex gap-3">
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Facebook"
-               >
-                 <FaFacebookF className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Instagram"
-               >
-                 <FaInstagram className="text-sm" />
-               </a>
-           
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Linkedin"
-               >
-                 <FaLinkedin className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="X"
-               >
-                 <FaXTwitter className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Whatsapp"
-               >
-                 <FaWhatsapp className="text-sm" />
-               </a>
-             </div>
-           </div>
-         </div>
-     
-         <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-[#a89377]">
-           © {new Date().getFullYear()} Judith Ogbara. All rights reserved.
-         </div>
-       </div>
-     </footer>
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr]">
+      
+      {/* Brand */}
+      <div>
+        <div className="flex items-center gap-3">
+          <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
+            <Image
+              src="/images/judith-logo2.png"
+              alt="Judith Ogbara logo"
+              fill
+              className="object-contain p-0"
+            />
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold tracking-wide text-white">
+              Judith Ogbara
+            </p>
+
+            <p className="text-xs text-[#cbb89f]">
+              Official Profile
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-5 max-w-sm text-sm leading-7 text-[#cbb89f]">
+          A public servant committed to advancing leadership, education,
+          empowerment, and sustainable community development through service,
+          integrity, and measurable impact.
+        </p>
+      </div>
+
+      {/* Navigation */}
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
+          Navigation
+        </p>
+
+        <ul className="mt-5 space-y-3 text-sm text-[#cbb89f]">
+          <li>
+            <a
+              href="#home"
+              className="transition hover:text-white"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#about"
+              className="transition hover:text-white"
+            >
+              About
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#impact"
+              className="transition hover:text-white"
+            >
+              Impact
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#vision"
+              className="transition hover:text-white"
+            >
+              Mandate & Vision
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#gallery"
+              className="transition hover:text-white"
+            >
+              Leadership in Action
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              className="transition hover:text-white"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
+          Contact
+        </p>
+
+        <div className="mt-5 space-y-4 text-sm text-[#cbb89f]">
+          <p>info@judithogbara.com</p>
+
+          <p>
+            +234 812 497 2568 | +234 803 304 8469
+          </p>
+
+          <p>
+            85 Eket Etinan Road, Okon Eket, Akwa Ibom State
+          </p>
+        </div>
+
+        {/* Social Media */}
+        <div className="mt-6 flex gap-3">
+          {/* Facebook */}
+          <a
+            href="https://www.facebook.com/judith.ogbara.7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="Facebook"
+          >
+            <FaFacebookF className="text-sm" />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/judithogbara/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="text-sm" />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/judith-ogbara-b3352856/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin className="text-sm" />
+          </a>
+
+          {/* X */}
+          <a
+            href="https://x.com/JudithOgbara"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="X"
+          >
+            <FaXTwitter className="text-sm" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-[#a89377]">
+      © {new Date().getFullYear()} Judith Ogbara. All rights reserved.
+    </div>
+  </div>
+</footer>
     </main>
   );
 }

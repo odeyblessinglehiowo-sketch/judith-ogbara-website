@@ -18,6 +18,16 @@ const navItems = [
   { label: "Impact", href: "/impact" },
   { label: "Awards", href: "/awards" },
   { label: "Leadership", href: "/leadership" },
+  {
+    label: "G4EP",
+    href: "https://www.geeeep.com",
+    external: true,
+  },
+  {
+    label: "AAE Foundation",
+    href: "https://www.aaefoundation.org.ng",
+    external: true,
+  },
   { label: "Leadership in Action", href: "/leadership-in-action" },
   { label: "News & Updates", href: "/news" },
   { label: "Contact", href: "/contact" },
@@ -116,7 +126,6 @@ const movingRoleImages = [
   "/images/action-02.jpg",
   "/images/rise-training.jpg",
   "/images/pads-donation1.jpg",
-  "/images/judith-hero.jpg",
 ];
 
 export default function LeadershipPage() {
@@ -139,6 +148,7 @@ export default function LeadershipPage() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+const [activeMovingRoleImage, setActiveMovingRoleImage] = useState(0);
 
   return (
     <main className="min-h-screen bg-brown text-[#2b1c14]">
@@ -175,25 +185,27 @@ export default function LeadershipPage() {
           const isActive = item.href === "/leadership";
 
           return (
-            <Link
-              key={item.href}
-              href={item.href}
-              className={`group relative rounded-full px-4 py-2.5 text-sm font-medium transition ${
-                isActive
-                  ? "bg-[#d4af78]/15 text-[#f3d7aa]"
-                  : "text-white/80 hover:text-white"
-              }`}
-            >
-              <span className="relative z-10">{item.label}</span>
+             <Link
+        key={item.href}
+        href={item.href}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noopener noreferrer" : undefined}
+        className={`group relative rounded-full px-2 py-2 text-sm font-bold transition ${
+          isActive
+            ? "bg-[#d4af78]/15 text-[#f3d7aa]"
+            : "text-white/80 hover:text-white"
+        }`}
+      >
+        <span className="relative z-10">{item.label}</span>
 
-              <span
-                className={`absolute inset-x-4 bottom-1 h-px origin-left bg-gradient-to-r from-[#b7864a] to-[#f2d4a8] transition-transform duration-300 ${
-                  isActive
-                    ? "scale-x-100"
-                    : "scale-x-0 group-hover:scale-x-100"
-                }`}
-              />
-            </Link>
+        <span
+          className={`absolute inset-x-3 bottom-1 h-px origin-left bg-gradient-to-r from-[#b7864a] to-[#f2d4a8] transition-transform duration-300 ${
+            isActive
+              ? "scale-x-100"
+              : "scale-x-0 group-hover:scale-x-100"
+          }`}
+        />
+      </Link>
           );
         })}
       </nav>
@@ -262,7 +274,9 @@ export default function LeadershipPage() {
           {navItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
+        href={item.href}
+        target={item.external ? "_blank" : undefined}
+        rel={item.external ? "noopener noreferrer" : undefined}
               onClick={() => setMobileMenuOpen(false)}
               className={`py-5 text-[1.05rem] font-semibold ${
                 item.href === "/leadership"
@@ -302,18 +316,14 @@ export default function LeadershipPage() {
           Leadership Profile
         </p>
 
-        <h1 className="mt-3 text-center text-[2.85rem] font-bold leading-[0.96] text-white sm:text-left sm:text-5xl lg:max-w-3xl lg:text-6xl">
+        <h1 className="mt-3 text-center text-[2rem] font-bold leading-[0.96] text-white sm:text-left sm:text-3xl lg:max-w-3xl lg:text-4xl">
           Leadership defined by structure, advocacy, and visible public engagement.
         </h1>
 
-        <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent sm:mx-0" />
+        <div className="mx-auto mt-2 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent sm:mx-0" />
 
         <p className="mx-auto mt-4 max-w-[34rem] text-center text-[14px] leading-7 text-[#eadfce]/85 sm:mx-0 sm:text-left sm:text-lg sm:leading-8">
           Hon. Judith’s leadership reflects substance, responsibility, and visible commitment to people.
-        </p>
-
-        <p className="mt-3 hidden max-w-2xl text-[15px] leading-8 text-[#eadfce]/78 lg:block">
-          From public advocacy and community-facing leadership to institutional engagement and partnership-building, Hon. Judith continues to show that leadership is strongest when it carries both structure and humanity.
         </p>
 
         <div className="mt-5 grid grid-cols-3 gap-2 sm:flex sm:flex-wrap sm:gap-3">
@@ -324,7 +334,7 @@ export default function LeadershipPage() {
                 key={tab.id}
                 type="button"
                 onClick={() => setActiveTab(tab.id)}
-                className={`rounded-full px-3 py-2.5 text-sm font-semibold transition ${
+                className={`rounded-xl px-3 py-2 text-sm font-semibold transition ${
                   isActive
                     ? "bg-[#d4af78] text-[#1d130e]"
                     : "border border-white/15 bg-white/[0.04] text-[#f0e1cf] hover:bg-white/[0.08]"
@@ -341,15 +351,15 @@ export default function LeadershipPage() {
             Focus Area
           </p>
 
-          <h3 className="mt-3 text-[1.7rem] font-bold leading-tight text-white sm:text-2xl">
+          <h3 className="mt-3 text-[1rem] font-bold leading-tight text-white sm:text-sm">
             {activeLeadershipTab.title}
           </h3>
 
-          <p className="mt-3 text-sm leading-7 text-[#eadfce]/78 sm:text-base sm:leading-8">
+          <p className="mt-3 text-sm leading-6 text-[#eadfce]/78 sm:text-base sm:leading-8">
             {activeLeadershipTab.text}
           </p>
 
-          <div className="mt-4 hidden items-start gap-3 rounded-2xl border border-white/10 bg-black/10 px-4 py-4 lg:flex">
+          <div className="mt-4 hidden items-start gap-3 rounded-2xl border border-white/10 bg-black/10 px-4 py-2 lg:flex">
             <div className="mt-1 h-2.5 w-2.5 rounded-full bg-[#d4af78]" />
             <p className="text-sm leading-7 text-[#f2e7d9]/78">
               {activeLeadershipTab.stat}
@@ -400,64 +410,19 @@ export default function LeadershipPage() {
                 <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#f0d39d]">
                   Public Profile
                 </p>
-                <p className="mt-3 text-lg font-bold leading-tight text-white sm:text-2xl">
+                <p className="mt-2 text-sm font-bold leading-tight text-white sm:text-md">
                   Leadership with reach, relevance, and responsibility.
                 </p>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="mt-4 hidden gap-3 sm:grid sm:grid-cols-3">
-          {roleCards.map((card) => (
-            <div
-              key={card.title}
-              className="rounded-[1.2rem] border border-white/10 bg-white/[0.05] p-4 backdrop-blur"
-            >
-              <p className="text-sm font-semibold leading-6 text-[#f3dcc1]">
-                {card.title}
-              </p>
-              <p className="mt-2 text-xs leading-6 text-[#eadfce]/72">
-                {card.text}
-              </p>
-            </div>
-          ))}
-        </div>
       </div>
     </div>
   </div>
 </section>
 
-      {/* Profile foundation */}
-      <section className="bg-white px-5 py-12 sm:px-6 lg:px-10 lg:py-16">
-        <div className="mx-auto max-w-7xl">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#9a7449] sm:tracking-[0.3em]">
-              Leadership Foundation
-            </p>
-            <h2 className="mt-3 text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
-              A journey shaped by experience, enterprise, and people-centered leadership.
-            </h2>
-            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-[#b7864a]" />
-          </div>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            {profileHighlights.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-[1.6rem] border border-[#eadac4] bg-[#fcfaf7] p-5 shadow-sm"
-              >
-                <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
-                  {item.title}
-                </p>
-                <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
-                  {item.text}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Key roles */}
 <section className="bg-[#fcfaf7] px-5 py-12 sm:px-6 lg:px-10 lg:py-16">
@@ -469,32 +434,76 @@ export default function LeadershipPage() {
           Key Roles & Appointments
         </p>
 
-        <h2 className="mt-3 text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
+        <h2 className="mt-3 text-2xl font-bold leading-tight text-[#2b1c14] sm:text-3xl">
           Leadership positions that reflect trust, relevance, and influence.
         </h2>
 
-        <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent" />
+        <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent" />
 
         <p className="mt-5 text-[15px] leading-8 text-[#6d5746] sm:text-lg">
           These roles reflect the breadth of Hon. Judith’s leadership engagement across education, empowerment, social impact, and development-focused advocacy.
         </p>
 
-        {/* Mobile: static grid */}
-        <div className="mt-6 grid grid-cols-2 gap-3 rounded-[1.45rem] border border-[#eadac4] bg-white p-3 shadow-sm lg:hidden">
-          {movingRoleImages.slice(0, 4).map((src, index) => (
-            <div
-              key={`${src}-${index}`}
-              className="relative h-[120px] overflow-hidden rounded-[1rem]"
-            >
-              <Image
-                src={src}
-                alt="Leadership moment"
-                fill
-                className="object-cover"
-              />
-            </div>
-          ))}
-        </div>
+        {/* Mobile: single-image carousel */}
+<div className="mt-6 lg:hidden">
+  <div className="relative overflow-hidden rounded-[1.45rem] border border-[#eadac4] bg-white p-3 shadow-sm">
+    <div className="relative h-[260px] overflow-hidden rounded-[1rem]">
+      <Image
+        src={movingRoleImages[activeMovingRoleImage]}
+        alt="Leadership moment"
+        fill
+        className="object-cover"
+      />
+
+      {/* Previous */}
+      <button
+        type="button"
+        onClick={() =>
+          setActiveMovingRoleImage(
+            (prev) =>
+              (prev - 1 + movingRoleImages.length) %
+              movingRoleImages.length
+          )
+        }
+        aria-label="Previous image"
+        className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-xl text-white backdrop-blur-sm transition hover:bg-black/65"
+      >
+        <span aria-hidden="true">‹</span>
+      </button>
+
+      {/* Next */}
+      <button
+        type="button"
+        onClick={() =>
+          setActiveMovingRoleImage(
+            (prev) => (prev + 1) % movingRoleImages.length
+          )
+        }
+        aria-label="Next image"
+        className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-black/45 text-xl text-white backdrop-blur-sm transition hover:bg-black/65"
+      >
+        <span aria-hidden="true">›</span>
+      </button>
+    </div>
+
+    {/* Image indicators */}
+    <div className="mt-3 flex justify-center gap-1.5">
+      {movingRoleImages.map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          onClick={() => setActiveMovingRoleImage(index)}
+          aria-label={`Go to image ${index + 1}`}
+          className={`h-1.5 rounded-full transition-all ${
+            activeMovingRoleImage === index
+              ? "w-6 bg-[#b7864a]"
+              : "w-1.5 bg-[#d8c7b0]"
+          }`}
+        />
+      ))}
+    </div>
+  </div>
+</div>
 
         {/* Desktop: gentle motion strip */}
         <div className="mt-6 hidden overflow-hidden rounded-[1.6rem] border border-[#eadac4] bg-white p-3 shadow-sm lg:block">
@@ -519,28 +528,28 @@ export default function LeadershipPage() {
       {/* Right column */}
       <div className="flex h-full flex-col gap-4">
         <div className="flex-1 rounded-[1.6rem] border border-[#eadac4] bg-white p-5 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
             GEEEEP Advisory Leadership
           </p>
-          <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+          <p className="mt-2 text-sm leading-6 text-[#6d5746] sm:text-base">
             Hon. Judith was appointed to leadership responsibility within a federal-level education, engagement, empowerment, and entrepreneurship initiative focused on development and opportunity.
           </p>
         </div>
 
         <div className="flex-1 rounded-[1.6rem] border border-[#eadac4] bg-white p-5 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
             AAE Foundation
           </p>
-          <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+          <p className="mt-2 text-sm leading-6 text-[#6d5746] sm:text-base">
             Through the AAE Foundation, Hon. Judith continues to support advocacy, educational access, practical community-centered support, and wider social impact initiatives.
           </p>
         </div>
 
         <div className="flex-1 rounded-[1.6rem] border border-[#eadac4] bg-white p-5 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
             Youth & Employment Engagement
           </p>
-          <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+          <p className="mt-2 text-sm leading-6 text-[#6d5746] sm:text-base">
             Hon. Judith has also been recognized within youth-oriented structures and leadership conversations focused on empowerment, employment, and opportunity creation.
           </p>
         </div>
@@ -558,13 +567,13 @@ export default function LeadershipPage() {
           Public Voice & Advocacy
         </p>
 
-        <h2 className="mt-3 text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
+        <h2 className="mt-2 text-2xl font-bold leading-tight text-[#2b1c14] sm:text-3xl">
           Leadership that speaks to safety, dignity, and institutional responsibility.
         </h2>
 
-        <div className="mt-4 h-1 w-20 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent" />
+        <div className="mt-2 h-1 w-20 rounded-full bg-gradient-to-r from-[#b7864a] via-[#f0cf95] to-transparent" />
 
-        <div className="mt-5 space-y-4 text-[15px] leading-8 text-[#6d5746] sm:text-lg">
+        <div className="mt-3 space-y-4 text-[15px] leading-7 text-[#6d5746] sm:text-lg">
           <p>
             Hon. Judith’s public engagement often touches issues of educational safety, protection for women and girls, and stronger support systems within learning and community spaces.
           </p>
@@ -573,19 +582,19 @@ export default function LeadershipPage() {
           </p>
         </div>
 
-        <div className="mt-6 rounded-[1.6rem] border border-[#eadac4] bg-[#fcfaf7] p-5 shadow-sm">
-          <p className="text-sm font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
+        <div className="mt-3 rounded-[1rem] border border-[#eadac4] bg-[#fcfaf7] p-4 shadow-sm">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[#9a7449]">
             Special Initiative
           </p>
-          <p className="mt-3 text-sm leading-8 text-[#6d5746] sm:text-base">
+          <p className="mt-3 text-sm leading-6 text-[#6d5746] sm:text-base">
             Hon. Judith’s leadership attention has also extended to practical interventions linked to student welfare, empowerment, and reducing social vulnerability through education, mentorship, and opportunity-based support.
           </p>
         </div>
       </div>
 
       <div>
-        <div className="overflow-hidden rounded-[2rem] border border-[#eadac4] bg-[#fcfaf7] p-3 shadow-[0_20px_60px_rgba(43,28,20,0.08)] sm:p-4">
-          <div className="relative h-[250px] overflow-hidden rounded-[1.45rem] sm:h-[360px]">
+        <div className="overflow-hidden rounded-[1rem] border border-[#eadac4] bg-[#fcfaf7] p-3 shadow-[0_20px_60px_rgba(43,28,20,0.08)] sm:p-4">
+          <div className="relative h-[250px] overflow-hidden rounded-[1rem] sm:h-[360px]">
             <Image
               src={leadershipMoments[activeMoment].image}
               alt={leadershipMoments[activeMoment].title}
@@ -602,7 +611,7 @@ export default function LeadershipPage() {
                   key={moment.title}
                   type="button"
                   onClick={() => setActiveMoment(index)}
-                  className={`overflow-hidden rounded-[1.15rem] border text-left transition ${
+                  className={`overflow-hidden rounded-[1rem] border text-left transition ${
                     isActive
                       ? "border-[#b7864a] shadow-[0_16px_40px_rgba(43,28,20,0.12)]"
                       : "border-[#eadac4]"
@@ -617,8 +626,8 @@ export default function LeadershipPage() {
                     />
                     <div className="absolute inset-0 bg-black/12" />
                   </div>
-                  <div className="bg-white p-3">
-                    <p className="text-sm font-semibold leading-6 text-[#2b1c14]">
+                  <div className="bg-white p-2">
+                    <p className="font-light text-xs sm:text-sm sm:font-semibold leading-6 text-[#2b1c14]">
                       {moment.title}
                     </p>
                   </div>
@@ -632,144 +641,211 @@ export default function LeadershipPage() {
   </div>
 </section>
       {/* Closing strip */}
-      <section className="bg-[#fcfaf7] px-5 py-12 sm:px-6 lg:px-10 lg:py-14">
+      <section className="bg-[#fcfaf7] px-5 py-7 sm:px-6 lg:px-10 lg:py-14">
         <div className="mx-auto max-w-7xl">
-          <div className="rounded-[2rem] bg-[linear-gradient(135deg,#4a2f21_0%,#2f1d14_100%)] px-6 py-8 text-white shadow-[0_24px_70px_rgba(43,28,20,0.18)] sm:px-8 sm:py-10">
-            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] sm:tracking-[0.3em]">
+          <div className="rounded-[0.7rem] bg-[linear-gradient(135deg,#4a2f21_0%,#2f1d14_100%)] px-6 py-6 text-white shadow-[0_24px_70px_rgba(43,28,20,0.18)] sm:px-8 sm:py-10">
+            <p className="text-xs text-center font-semibold uppercase tracking-[0.24em] text-[#d9bb8d] sm:tracking-[0.3em]">
               Leadership Statement
             </p>
-            <h2 className="mt-4 max-w-4xl text-3xl font-bold leading-tight sm:text-4xl">
+            <h2 className="mt-3 mx-auto text-center max-w-4xl text-2xl font-bold leading-tight sm:text-4xl">
               Leadership gains meaning when it is reflected in people, systems, and the lasting value it creates.
             </h2>
-            <p className="mt-5 max-w-4xl text-sm leading-7 text-[#eadfce]/85 sm:text-base sm:leading-8">
+            <p className="mt-3 text-center mx-auto max-w-4xl text-sm leading-6 text-[#eadfce]/85 sm:text-base sm:leading-8">
               Hon. Judith’s public and institutional journey continues to reflect
               a blend of experience, advocacy, and practical impact that speaks
               to both structure and humanity.
             </p>
 
-            <div className="mt-7 flex flex-wrap gap-3">
-              <Link
-                href="/impact"
-                className="inline-flex items-center gap-2 rounded-full bg-[#d4af78] px-5 py-3 text-sm font-semibold text-[#2a1a12] transition hover:bg-[#e0bd89]"
-              >
-                Explore Impact <FaArrowRight className="text-xs" />
-              </Link>
+          <div className="mt-5 flex flex-wrap justify-center gap-3">
+  <Link
+    href="/impact"
+    className="inline-flex items-center justify-center gap-2 rounded-full bg-[#d4af78] px-16 py-3 text-center text-sm font-semibold text-[#2a1a12] transition hover:bg-[#e0bd89]"
+  >
+    Explore Impact <FaArrowRight className="text-xs" />
+  </Link>
 
-              <Link
-                href="/about"
-                className="inline-flex items-center justify-center rounded-full border border-white/20 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-              >
-                About Judith
-              </Link>
-            </div>
+  <Link
+    href="/about"
+    className="inline-flex items-center justify-center rounded-full border border-white/20 px-20 py-3 text-center text-sm font-semibold text-white transition hover:bg-white/10"
+  >
+    About Judith
+  </Link>
+</div>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-     <footer className="bg-[#1f130d] px-5 py-14 text-[#e8dccb] sm:px-6 lg:px-10 lg:py-16">
-       <div className="mx-auto max-w-7xl">
-         <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr]">
-           <div>
-             <div className="flex items-center gap-3">
-               <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
-                 <Image
-                   src="/images/judith-logo2.png"
-                   alt="Judith Ogbara logo"
-                   fill
-                   className="object-contain p-0"
-                 />
-               </div>
-     
-               <div>
-                 <p className="text-sm font-semibold tracking-wide text-white">
-                   Judith Ogbara
-                 </p>
-                 <p className="text-xs text-[#cbb89f]">
-                   Official Profile
-                 </p>
-               </div>
-             </div>
-     
-             <p className="mt-5 max-w-sm text-sm leading-7 text-[#cbb89f]">
-               A public servant committed to advancing leadership, education,
-               empowerment, and sustainable community development through service,
-               integrity, and measurable impact.
-             </p>
-           </div>
-     
-           <div>
-             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
-               Navigation
-             </p>
-     
-             <ul className="mt-5 space-y-3 text-sm text-[#cbb89f]">
-               <li><a href="#home" className="transition hover:text-white">Home</a></li>
-               <li><a href="#about" className="transition hover:text-white">About</a></li>
-               <li><a href="#impact" className="transition hover:text-white">Impact</a></li>
-               <li><a href="#vision" className="transition hover:text-white">Mandate & Vision</a></li>
-               <li><a href="#gallery" className="transition hover:text-white">Leadership in Action</a></li>
-               <li><a href="#contact" className="transition hover:text-white">Contact</a></li>
-             </ul>
-           </div>
-     
-           <div>
-             <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
-               Contact
-             </p>
-     
-             <div className="mt-5 space-y-4 text-sm text-[#cbb89f]">
-               <p>info@judithogbara.com</p>
-               <p>+234 812 497 2568 | +234 803 304 8469</p>
-               <p>85 Eket Etinan Road, Okon Eket, Akwa Ibom State</p>
-             </div>
-     
-             <div className="mt-6 flex gap-3">
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Facebook"
-               >
-                 <FaFacebookF className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Instagram"
-               >
-                 <FaInstagram className="text-sm" />
-               </a>
-           
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Linkedin"
-               >
-                 <FaLinkedin className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="X"
-               >
-                 <FaXTwitter className="text-sm" />
-               </a>
-               <a
-                 href="#"
-                 className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
-                 aria-label="Whatsapp"
-               >
-                 <FaWhatsapp className="text-sm" />
-               </a>
-             </div>
-           </div>
-         </div>
-     
-         <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-[#a89377]">
-           © {new Date().getFullYear()} Judith Ogbara. All rights reserved.
-         </div>
-       </div>
-     </footer>
+    <footer className="bg-[#1f130d] px-5 py-14 text-[#e8dccb] sm:px-6 lg:px-10 lg:py-16">
+  <div className="mx-auto max-w-7xl">
+    <div className="grid gap-10 md:grid-cols-2 xl:grid-cols-[1.2fr_0.8fr_1fr]">
+      
+      {/* Brand */}
+      <div>
+        <div className="flex items-center gap-3">
+          <div className="relative h-10 w-10 overflow-hidden rounded-full bg-[#3a2418]">
+            <Image
+              src="/images/judith-logo2.png"
+              alt="Judith Ogbara logo"
+              fill
+              className="object-contain p-0"
+            />
+          </div>
+
+          <div>
+            <p className="text-sm font-semibold tracking-wide text-white">
+              Judith Ogbara
+            </p>
+
+            <p className="text-xs text-[#cbb89f]">
+              Official Profile
+            </p>
+          </div>
+        </div>
+
+        <p className="mt-5 max-w-sm text-sm leading-7 text-[#cbb89f]">
+          A public servant committed to advancing leadership, education,
+          empowerment, and sustainable community development through service,
+          integrity, and measurable impact.
+        </p>
+      </div>
+
+      {/* Navigation */}
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
+          Navigation
+        </p>
+
+        <ul className="mt-5 space-y-3 text-sm text-[#cbb89f]">
+          <li>
+            <a
+              href="#home"
+              className="transition hover:text-white"
+            >
+              Home
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#about"
+              className="transition hover:text-white"
+            >
+              About
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#impact"
+              className="transition hover:text-white"
+            >
+              Impact
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#vision"
+              className="transition hover:text-white"
+            >
+              Mandate & Vision
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#gallery"
+              className="transition hover:text-white"
+            >
+              Leadership in Action
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="#contact"
+              className="transition hover:text-white"
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Contact */}
+      <div>
+        <p className="text-sm font-semibold uppercase tracking-[0.25em] text-[#d4af78]">
+          Contact
+        </p>
+
+        <div className="mt-5 space-y-4 text-sm text-[#cbb89f]">
+          <p>info@judithogbara.com</p>
+
+          <p>
+            +234 812 497 2568 | +234 803 304 8469
+          </p>
+
+          <p>
+            85 Eket Etinan Road, Okon Eket, Akwa Ibom State
+          </p>
+        </div>
+
+        {/* Social Media */}
+        <div className="mt-6 flex gap-3">
+          {/* Facebook */}
+          <a
+            href="https://www.facebook.com/judith.ogbara.7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="Facebook"
+          >
+            <FaFacebookF className="text-sm" />
+          </a>
+
+          {/* Instagram */}
+          <a
+            href="https://www.instagram.com/judithogbara/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="Instagram"
+          >
+            <FaInstagram className="text-sm" />
+          </a>
+
+          {/* LinkedIn */}
+          <a
+            href="https://www.linkedin.com/in/judith-ogbara-b3352856/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="LinkedIn"
+          >
+            <FaLinkedin className="text-sm" />
+          </a>
+
+          {/* X */}
+          <a
+            href="https://x.com/JudithOgbara"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/5 transition hover:bg-white/10"
+            aria-label="X"
+          >
+            <FaXTwitter className="text-sm" />
+          </a>
+        </div>
+      </div>
+    </div>
+
+    {/* Copyright */}
+    <div className="mt-10 border-t border-white/10 pt-6 text-center text-sm text-[#a89377]">
+      © {new Date().getFullYear()} Judith Ogbara. All rights reserved.
+    </div>
+  </div>
+</footer>
 
 <style jsx>{`
   .leadership-strip {
