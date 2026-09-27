@@ -21,6 +21,134 @@ export type NewsItem = {
 };
 
 export const newsItems: NewsItem[] = [
+  {
+  slug: "go-back-to-school-scholarship",
+
+  title: "Go Back to School Scholarship: Investing in a Brighter Future for Children",
+
+  date: "September 26, 2026",
+
+  byline: "By G4EP Tech Department",
+
+  intro:
+    "Ambassador Mrs. Judith Mayen Etuk Ogbara has launched a Go Back to School Scholarship initiative to support deserving children with the opportunity to return to school and continue their education.",
+
+  image: "/images/news/go-back-to-school-1.webp",
+
+  body: [
+
+    "In the spirit of giving and uplifting the next generation, Ambassador Mrs. Judith Mayen Etuk Ogbara is offering scholarships to deserving children to help them return to school and continue their education.",
+
+    "Built around the belief that “Education is the key to a brighter future,” the Go Back to School Scholarship reflects a commitment to helping children access the basic support they need to learn, grow, and pursue their aspirations.",
+
+    "The initiative provides direct scholarship support to help children get back to school, alongside essential educational needs such as school supplies, uniforms, and other items required for a successful return to the classroom.",
+
+    "Beyond providing immediate assistance, the scholarship is centred on creating opportunities for children to remain engaged in education and look forward to a brighter future. By easing some of the challenges associated with returning to school, the initiative seeks to give deserving children renewed encouragement to learn and flourish.",
+
+    "The initiative also reflects Ambassador Ogbara’s continued emphasis on supporting children and strengthening opportunities through education. It is a reminder that investing in a child’s education can help shape a stronger future for the child and, ultimately, the wider community.",
+
+    "With a heart for education and a commitment to the next generation, Ambassador Mrs. Judith Mayen Etuk Ogbara continues to champion practical support that places children and their future at the centre of service.",
+
+    "Together, we can create a better tomorrow by investing in a child today.",
+
+  ],
+
+  gallery: [
+
+    {
+      src: "/images/news/go-back-to-school-1.webp",
+      alt: "Go Back to School Scholarship initiative",
+      caption: "From the G4EP Media Team",
+    },
+
+    {
+      src: "/images/news/go-back-to-school-2.webp",
+      alt: "Children supported through the Go Back to School Scholarship",
+      caption: "From the G4EP Media Team",
+    },
+
+    {
+      src: "/images/news/go-back-to-school-3.webp",
+      alt: "Educational support for children through the scholarship initiative",
+      caption: "From the G4EP Media Team",
+    },
+
+    {
+      src: "/images/news/go-back-to-school-4.webp",
+      alt: "Go Back to School Scholarship education support",
+      caption: "From the G4EP Media Team",
+    },
+
+  ],
+
+},
+  {
+  slug: "law-of-honour-award-humanitarian-service",
+
+  title: "A Moment of Honour, A New Chapter of Humanitarian Service",
+
+  date: "September 20, 2026",
+
+  byline: "By G4EP Tech Department",
+
+  intro:
+    "Dr. Judith Mayen Etuk Ogbara was recognised for her contributions to humanitarian service at the 5th Edition of the Law of Honour Award Night in New York, marking a significant new chapter in her journey of service and impact.",
+
+  image: "/images/news/law-of-honour-1.webp",
+
+  body: [
+
+    "Dr. Judith Mayen Etuk Ogbara has been recognised for her contributions to humanitarian service at the 5th Edition of the Law of Honour Award Night, held in New York as part of the UNGA High-Level Global Executive Roundtable Side Event 2026.",
+
+    "At the distinguished gathering, Dr. Ogbara was formally recognised and announced in her new capacity as an Ambassador for Humanitarian Service, marking a significant moment in her journey of leadership, advocacy, empowerment, and service to humanity.",
+
+    "The recognition reflects a journey defined by a sustained commitment to touching lives and advancing the cause of humanity. Her work has continued to focus on service, empowerment, and meaningful interventions that make a difference in the lives of individuals and communities.",
+
+    "The occasion brought together distinguished personalities and development stakeholders, including Ambassador Jimoh Ibrahim, CFR, in a setting that celebrated service, leadership, humanitarian commitment, and impact.",
+
+    "A defining moment of the ceremony was the reading of the official citation presented in honour of Dr. Ogbara. The detailed citation highlighted her achievements, humanitarian contributions, and commitment to service, documenting the journey and impact behind the recognition.",
+
+    "The citation was read across several pages before the honour was formally presented, providing a fitting context to the recognition and allowing the audience to reflect on the work and contributions that preceded the honour.",
+
+    "For Dr. Ogbara, the recognition represents more than a title. It marks a greater responsibility to continue serving, empowering others, and creating meaningful impact as she begins a new chapter of humanitarian service.",
+
+    "All honour and glory to God. Congratulations to Dr. Judith Mayen Etuk Ogbara on this significant milestone and on her new role as an Ambassador for Humanitarian Service.",
+
+  ],
+
+  gallery: [
+
+    {
+      src: "/images/news/law-of-honour-1.webp",
+      alt: "Dr. Judith Mayen Etuk Ogbara at the Law of Honour Award Night in New York",
+      caption: "From the G4EP Media Team",
+    },
+
+    {
+      src: "/images/news/law-of-honour-2.webp",
+      alt: "Dr. Judith Mayen Etuk Ogbara receiving recognition for humanitarian service",
+      caption: "From the G4EP Media Team",
+    },
+
+    {
+      src: "/images/news/law-of-honour-3.webp",
+      alt: "Dr. Judith Mayen Etuk Ogbara at the humanitarian honour event",
+      caption: "From the G4EP Media Team",
+    },
+
+  ],
+
+  video: {
+
+    src: "/images/news/law-of-honour-citation.mp4",
+
+    poster: "/images/news/law-of-honour-1.webp",
+
+    caption: "Full citation and presentation | From the G4EP Media Team",
+
+  },
+
+},
 
 {
   slug: "judith-ogbara-commemorates-international-day-of-democracy-2026",

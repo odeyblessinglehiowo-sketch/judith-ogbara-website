@@ -42,6 +42,22 @@ const heroImages = [
 ];
 
 const galleryTop = [
+    {
+    image: "/images/award.webp",
+    title: "Investing in Young Futures",
+  },
+    {
+    image: "/images/award1.webp",
+   title: "Back to School Scholarship",
+  },
+    {
+    image: "/images/ny1.webp",
+    title: "Honoured for Service",
+  },
+    {
+    image: "/images/ny2.webp",
+    title: "A New Chapter of Service and Impact",
+  },
   {
     image: "/images/action-2.jpg",
     title: "Committee Engagement",
