@@ -247,10 +247,6 @@ export default function NewsPage() {
               {item.byline}
             </p>
 
-            <p className="mt-5 text-sm leading-6 text-[#6d5746]">
-              {item.intro}
-            </p>
-
             <div className="mt-4">
               <Link
                 href={`/news/${item.slug}`}

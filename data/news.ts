@@ -22,34 +22,28 @@ export type NewsItem = {
 
 export const newsItems: NewsItem[] = [
   {
-  slug: "go-back-to-school-scholarship",
+  slug: "aae-foundation-approves-25-million-scholarship-scheme-2026-2027",
 
-  title: "Go Back to School Scholarship: Investing in a Brighter Future for Children",
+  title: "AAE Foundation Approves ₦25 Million for 2026/2027 Scholarship Scheme",
 
   date: "September 26, 2026",
 
   byline: "By G4EP Tech Department",
 
   intro:
-    "Ambassador Mrs. Judith Mayen Etuk Ogbara has launched a Go Back to School Scholarship initiative to support deserving children with the opportunity to return to school and continue their education.",
+    "AAE Foundation approves ₦25 million for its 2026/2027 scholarship scheme, supporting deserving students and reaffirming its commitment to expanding access to education.",
 
   image: "/images/news/go-back-to-school-1.webp",
 
   body: [
 
-    "In the spirit of giving and uplifting the next generation, Ambassador Mrs. Judith Mayen Etuk Ogbara is offering scholarships to deserving children to help them return to school and continue their education.",
+    "The Abasiama Affiong Etuk (AAE) Foundation has approved ₦25 million for its scholarship scheme for the 2026/2027 academic session, reaffirming its commitment to supporting access to education for deserving children and young people. The announcement was made on Saturday, 26 September 2026, during the Foundation’s 2026 Back-to-School Project, which provided educational support to pupils and students from primary and secondary schools.",
 
-    "Built around the belief that “Education is the key to a brighter future,” the Go Back to School Scholarship reflects a commitment to helping children access the basic support they need to learn, grow, and pursue their aspirations.",
+    "More than 50 beneficiaries received scholarships and other back-to-school materials during the programme. Speaking at the event, the Programme Coordinator, Prince Charles Edoho, disclosed that the Foundation has supported over 1,000 students across different levels of education, ranging from kindergarten to tertiary institutions, in various parts of the country.",
 
-    "The initiative provides direct scholarship support to help children get back to school, alongside essential educational needs such as school supplies, uniforms, and other items required for a successful return to the classroom.",
+    "The newly approved ₦25 million scholarship allocation will be judiciously disbursed to deserving students for the 2026/2027 academic session, helping to ease the financial burden of education on beneficiary families. The Grand Patron of the AAE Foundation, Lord U.D.U. Etuk, also spoke at the event, highlighting the history and purpose of the Foundation, which was established in memory of his late wife, Mrs. Abasiama Affiong Etuk, by their children, led by their first daughter, Ambassador Dr. Mrs. Judith Mayen Etuk-Ogbara.",
 
-    "Beyond providing immediate assistance, the scholarship is centred on creating opportunities for children to remain engaged in education and look forward to a brighter future. By easing some of the challenges associated with returning to school, the initiative seeks to give deserving children renewed encouragement to learn and flourish.",
-
-    "The initiative also reflects Ambassador Ogbara’s continued emphasis on supporting children and strengthening opportunities through education. It is a reminder that investing in a child’s education can help shape a stronger future for the child and, ultimately, the wider community.",
-
-    "With a heart for education and a commitment to the next generation, Ambassador Mrs. Judith Mayen Etuk Ogbara continues to champion practical support that places children and their future at the centre of service.",
-
-    "Together, we can create a better tomorrow by investing in a child today.",
+    "He further emphasized the importance of collective responsibility in advancing society and encouraged beneficiaries to make judicious use of the opportunities provided to them and, in the future, extend similar support to others. The AAE Foundation continues to advance its humanitarian mission through educational support, healthcare interventions, skills acquisition, and other empowerment initiatives. At AAE Foundation, we believe that education is an investment in people, families, and the future.",
 
   ],
 

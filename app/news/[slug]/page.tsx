@@ -264,7 +264,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
               ← Back to News & Updates
             </Link>
 
-            <h2 className="mt-5 text-3xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
+            <h2 className="mt-5 text-xl font-bold leading-tight text-[#2b1c14] sm:text-4xl">
               {article.title}
             </h2>
 
@@ -287,7 +287,7 @@ export default async function NewsArticlePage({ params }: PageProps) {
           <section className="mt-10">
             <div className="overflow-hidden bg-white shadow-sm">
               <div className="p-6 sm:p-8 lg:p-10">
-                <div className="max-w-6xl space-y-6 text-[18px] leading-10 text-[#6d5746]">
+                <div className="max-w-6xl text-justify space-y-6 text-[18px] leading-10 text-[#6d5746]">
                   {bodyParagraphs.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}
